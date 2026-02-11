@@ -21,17 +21,17 @@ export function Hero({
 }: HeroProps) {
     return (
         <section className="hero-panel reveal" aria-labelledby={id}>
+            {imageSrc && (
+                <figure className="hero-media">
+                    <img src={imageSrc} alt={imageAlt || ""} loading="eager" />
+                </figure>
+            )}
             <div className="hero-copy">
                 {kicker && <p className="kicker">{kicker}</p>}
                 <h1 id={id}>{title}</h1>
                 {lead && <p className="lead">{lead}</p>}
                 {children}
             </div>
-            {imageSrc && (
-                <figure className="hero-media">
-                    <img src={imageSrc} alt={imageAlt || ""} loading="eager" />
-                </figure>
-            )}
         </section>
     );
 }

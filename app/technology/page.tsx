@@ -3,6 +3,7 @@ import { Hero } from "@/components/ui/Hero";
 import { Section } from "@/components/ui/Section";
 import { Card } from "@/components/ui/Card";
 import { List } from "@/components/ui/List";
+import { PositioningSection } from "@/components/ui/PositioningSection";
 
 export const metadata: Metadata = {
   title: "Technology"
@@ -12,17 +13,21 @@ export default function TechnologyPage() {
   return (
     <div className="home-page technology-page">
       <Hero
-        kicker="TECHNOLOGY & PROCESS"
-        title="A Modular, Zero-Waste Platform for Critical Minerals Recovery from Red Mud"
-        lead="Our technology is a patented, low-temperature hydrometallurgical platform engineered specifically for bauxite residue. Unlike laboratory-scale or single-element approaches, the system is designed for continuous industrial operation, capable of processing both legacy stockpiles and live refinery residue streams."
-        imageSrc="https://upload.wikimedia.org/wikipedia/commons/4/40/Alumina_refinery_pinjarra.jpg"
-        imageAlt="Alumina refinery process infrastructure"
+        kicker="TECHNOLOGY"
+        title="Turning an Industrial Liability into a Strategic Mineral Asset"
+        imageSrc="/TECHNOLOGY/hero.jpg"
+        imageAlt="Red Mud Processing Technology"
         id="technology-hero-title"
       >
         <p>
-          At its core is a four-stage proprietary extraction architecture that enables selective
-          recovery of high-value elements while converting the remaining matrix into stable,
-          reusable industrial materials.
+          Red mud—bauxite residue from alumina refining—is one of the largest unmanaged
+          industrial waste streams globally. Our platform converts this long-term environmental
+          liability into a domestic source of critical minerals, including Scandium and Rare Earth
+          Elements (REEs), while permanently reducing legacy stockpiles.
+        </p>
+        <p>
+          This is not theoretical extraction. It is a commercially proven, modular platform
+          engineered for deployment at existing refineries and legacy pond sites.
         </p>
       </Hero>
 
@@ -92,6 +97,13 @@ export default function TechnologyPage() {
             ]}
           />
         </Card>
+        <figure className="image-card image-card-tall mt-6">
+          <img
+            src="/TECHNOLOGY/STAGE 1.avif"
+            alt="Stage 1 - Feedstock Conditioning Process"
+            loading="lazy"
+          />
+        </figure>
       </Section>
 
       <Section
@@ -139,6 +151,13 @@ export default function TechnologyPage() {
             ]}
           />
         </Card>
+        <figure className="image-card image-card-large mt-6">
+          <img
+            src="/TECHNOLOGY/108233019-1764243888072-gettyimages-2235868370-ESTONIA-NARVA-RARE-EARTH-PLANT-OPEN.jpeg"
+            alt="Stage 2 - Rare Earth Processing Facility"
+            loading="lazy"
+          />
+        </figure>
       </Section>
 
       <Section
@@ -177,10 +196,10 @@ export default function TechnologyPage() {
             cracking or offshore refining—critical for supply-chain security and value capture.
           </p>
         </Card>
-        <figure className="inline-media card mt-6">
+        <figure className="image-card image-card-full mt-6">
           <img
-            src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Laboratory_reactors.jpg"
-            alt="Industrial reactor and separation equipment"
+            src="/TECHNOLOGY/Strategic Materials Recovered from Red Mud.webp"
+            alt="Strategic Materials Recovered from Red Mud"
             loading="lazy"
           />
         </figure>
@@ -212,6 +231,22 @@ export default function TechnologyPage() {
           <p>This is not waste minimization.</p>
           <p>It is full material conversion.</p>
         </Card>
+        <div className="grid-2 mt-6">
+          <figure className="image-card image-card-tall">
+            <img
+              src="/TECHNOLOGY/WATER RECOVERY & CLOSED-LOOP OPERATION.png"
+              alt="Water Recovery and Closed-Loop Operation"
+              loading="lazy"
+            />
+          </figure>
+          <figure className="image-card image-card-tall">
+            <img
+              src="/TECHNOLOGY/Reverse Osmosis with Closed-Circuit Desalination for High Recovery in Commercial RO Plants.webp"
+              alt="Reverse Osmosis Closed-Circuit Desalination"
+              loading="lazy"
+            />
+          </figure>
+        </div>
       </Section>
 
       <Section
@@ -251,6 +286,13 @@ export default function TechnologyPage() {
             />
           </Card>
         </div>
+        <figure className="image-card image-card-large mt-6">
+          <img
+            src="/TECHNOLOGY/Modular-construction-on-chemical-process-system.jpg"
+            alt="Modular Construction on Chemical Process System"
+            loading="lazy"
+          />
+        </figure>
       </Section>
 
       <Section
@@ -328,14 +370,16 @@ export default function TechnologyPage() {
         </Card>
       </Section>
 
-      <section className="positioning-section reveal" aria-labelledby="technical-close-title">
-        <p className="kicker">POSITIONING STATEMENT (Technical Close)</p>
-        <h2 id="technical-close-title">This is not a waste-treatment system.</h2>
-        <p>
-          It is a critical-minerals recovery platform engineered for scale, security, and
-          permanence.
-        </p>
-      </section>
+
+      <PositioningSection
+        title="This is not a waste-treatment system."
+        description="It is a critical-minerals recovery platform engineered for scale, security, and permanence."
+        buttons={[
+          { label: "View Outputs", href: "/outputs" },
+          { label: "Partnership Models", href: "/partnerships" }
+        ]}
+        id="technical-close-title"
+      />
     </div>
   );
 }

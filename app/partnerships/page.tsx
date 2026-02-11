@@ -3,6 +3,7 @@ import { Hero } from "@/components/ui/Hero";
 import { Section } from "@/components/ui/Section";
 import { Card } from "@/components/ui/Card";
 import { List } from "@/components/ui/List";
+import { PositioningSection } from "@/components/ui/PositioningSection";
 
 export const metadata: Metadata = {
   title: "Partnerships"
@@ -14,8 +15,8 @@ export default function PartnershipsPage() {
       <Hero
         kicker="PARTNERSHIPS & BUSINESS MODELS"
         title="Scaling Critical Mineral Recovery Through Strategic Collaboration"
-        imageSrc="https://upload.wikimedia.org/wikipedia/commons/4/40/Alumina_refinery_pinjarra.jpg"
-        imageAlt="Refinery-adjacent industrial infrastructure suitable for partnership deployment"
+        imageSrc="/partnership/HERO SECTION.jpg"
+        imageAlt="Strategic Partnership for Red Mud Processing"
         id="partnerships-hero-title"
       >
         <p>
@@ -52,6 +53,13 @@ export default function PartnershipsPage() {
             ]}
           />
         </Card>
+        <figure className="image-card image-card-large mt-6">
+          <img
+            src="/partnership/Partnership Philosophy.jpg"
+            alt="Partnership Philosophy"
+            loading="lazy"
+          />
+        </figure>
       </Section>
 
       <Section
@@ -143,6 +151,13 @@ export default function PartnershipsPage() {
             <span className="font-semibold">Best suited for:</span> Producers with multiple refineries or geographies seeking standardized deployment.
           </p>
         </Card>
+        <figure className="image-card image-card-large mt-6">
+          <img
+            src="/partnership/Technology Licensing.webp"
+            alt="Technology Licensing Model"
+            loading="lazy"
+          />
+        </figure>
 
         <h2 className="text-xl font-bold mt-12 mb-4">3. BUILD-OWN-OPERATE (BOO)</h2>
         <Card>
@@ -187,12 +202,19 @@ export default function PartnershipsPage() {
             <span className="font-semibold">Best suited for:</span> Producers prioritizing capital discipline and rapid ESG compliance.
           </p>
         </Card>
+        <figure className="image-card image-card-large mt-6">
+          <img
+            src="/partnership/Build-Own-Operate (BOO).jpg"
+            alt="Build-Own-Operate Model"
+            loading="lazy"
+          />
+        </figure>
       </Section>
 
       <Section
         id="flow-title"
-        kicker="“PARTNER WITH AN ALUMINA PRODUCER” — DEPLOYMENT FLOW"
-        title="Step 1: Site & Stockpile Assessment"
+        kicker="DEPLOYMENT FLOW"
+        title="Partner with an Alumina Producer"
       >
         <div className="grid-2">
           <Card title="Step 1: Site & Stockpile Assessment">
@@ -253,6 +275,13 @@ export default function PartnershipsPage() {
             <path d="M890 125H920" />
           </svg>
         </figure>
+        <figure className="image-card image-card-large mt-6">
+          <img
+            src="/partnership/Deployment Flow.jpeg"
+            alt="Partnership Deployment Flow"
+            loading="lazy"
+          />
+        </figure>
       </Section>
 
       <Section
@@ -282,6 +311,13 @@ export default function PartnershipsPage() {
             />
           </Card>
         </div>
+        <figure className="image-card image-card-large mt-6">
+          <img
+            src="/partnership/Strategic Benefits.jpg"
+            alt="Strategic Benefits for All Partners"
+            loading="lazy"
+          />
+        </figure>
       </Section>
 
       <Section
@@ -327,6 +363,14 @@ export default function PartnershipsPage() {
           </p>
         </Card>
       </Section>
+
+      <PositioningSection
+        title="We partner selectively. We deploy at scale."
+        description="The opportunity is global, the feedstock is permanent, and the window for first-mover advantage is finite."
+        buttons={[
+          { label: "Start Project Intake", href: "/contact" }
+        ]}
+      />
     </div>
   );
 }

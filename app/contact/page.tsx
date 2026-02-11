@@ -3,6 +3,7 @@ import { Hero } from "@/components/ui/Hero";
 import { Section } from "@/components/ui/Section";
 import { Card } from "@/components/ui/Card";
 import { List } from "@/components/ui/List";
+import { PositioningSection } from "@/components/ui/PositioningSection";
 
 export const metadata: Metadata = {
   title: "Contact"
@@ -24,8 +25,8 @@ export default function ContactPage({ searchParams }: ContactPageProps) {
       <Hero
         kicker="CONTACT & PROJECT INTAKE"
         title="Initiating Technical & Commercial Engagement"
-        imageSrc="https://upload.wikimedia.org/wikipedia/commons/4/40/Alumina_refinery_pinjarra.jpg"
-        imageAlt="Industrial refinery infrastructure for technical and commercial project intake"
+        imageSrc="/CONTACT/CONTACT.webp"
+        imageAlt="Contact and Project Intake"
         id="contact-hero-title"
       >
         <p>
@@ -126,6 +127,13 @@ export default function ContactPage({ searchParams }: ContactPageProps) {
             />
           </Card>
         </div>
+        <figure className="image-card image-card-large mt-6">
+          <img
+            src="/CONTACT/CONTACT2.webp"
+            alt="Organization Types and Engagement Framework"
+            loading="lazy"
+          />
+        </figure>
       </Section>
 
       <Section
@@ -198,6 +206,13 @@ export default function ContactPage({ searchParams }: ContactPageProps) {
           </p>
           <button type="submit">Submit project intake</button>
         </form>
+        <figure className="image-card image-card-large mt-6">
+          <img
+            src="/CONTACT/CONTACT3.webp"
+            alt="Project Intake Form"
+            loading="lazy"
+          />
+        </figure>
       </Section>
 
       <Section
@@ -252,6 +267,13 @@ export default function ContactPage({ searchParams }: ContactPageProps) {
             deployment or investment.
           </p>
         </Card>
+        <figure className="image-card image-card-large mt-6">
+          <img
+            src="/CONTACT/WHAT HAPPENS NEXT.jpg"
+            alt="Structured Engagement Pathway"
+            loading="lazy"
+          />
+        </figure>
       </Section>
 
       <Section
@@ -286,18 +308,12 @@ export default function ContactPage({ searchParams }: ContactPageProps) {
         </Card>
       </Section>
 
-      <section className="positioning-section reveal" aria-labelledby="contact-close-title">
-        <p className="kicker">PAGE CLOSE (POSITIONING)</p>
-        <h2 id="contact-close-title">This is not a contact form.</h2>
-        <p>
-          It is the first step in deploying industrial-scale remediation and critical-minerals
-          infrastructure.
-        </p>
-        <p>
-          If you are prepared for a structured, technically grounded engagement, begin the
-          process.
-        </p>
-      </section>
+
+      <PositioningSection
+        title="This is not a contact form."
+        description="It is the first step in deploying industrial-scale remediation and critical-minerals infrastructure. If you are prepared for a structured, technically grounded engagement, begin the process."
+        id="contact-close-title"
+      />
     </div>
   );
 }

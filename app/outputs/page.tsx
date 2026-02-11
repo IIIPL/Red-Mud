@@ -3,6 +3,7 @@ import { Hero } from "@/components/ui/Hero";
 import { Section } from "@/components/ui/Section";
 import { Card } from "@/components/ui/Card";
 import { List } from "@/components/ui/List";
+import { PositioningSection } from "@/components/ui/PositioningSection";
 
 export const metadata: Metadata = {
   title: "Outputs"
@@ -14,8 +15,8 @@ export default function OutputsPage() {
       <Hero
         kicker="CRITICAL MINERALS & OUTPUTS"
         title="Strategic Materials Recovered from Red Mud — At Industrial Scale"
-        imageSrc="https://upload.wikimedia.org/wikipedia/commons/5/53/Rare_earth_oxides.jpg"
-        imageAlt="Rare earth and industrial oxide materials"
+        imageSrc="/output/Strategic Materials Recovered from Red Mud.png"
+        imageAlt="Strategic Materials Recovered from Red Mud"
         id="outputs-hero-title"
       >
         <p>
@@ -35,60 +36,104 @@ export default function OutputsPage() {
       </Hero>
 
       <Section
-        id="scandium-title"
-        kicker="SCANDIUM"
-        title="Ultra-High-Value Enabler for Aerospace and Advanced Energy Systems"
+        id="iron-title"
+        kicker="IRON OXIDES"
+        title="Industrial-Grade Products with Immediate Offtake Potential"
       >
         <div className="grid-2">
           <Card title="Recovered Form">
             <List
               items={[
-                "Scandium oxide (Sc₂O₃) intermediate",
-                "Convertible to master alloys or high-purity oxide grades"
+                "Iron oxide pigments",
+                "Iron-based coagulants and industrial intermediates"
+              ]}
+            />
+            <p className="font-semibold mt-4 mb-2">Indicative Purity Targets</p>
+            <List
+              items={[
+                "≥95% Fe₂O₃ for pigment and industrial use",
+                "Controlled particle size and phase composition"
               ]}
             />
           </Card>
-          <Card title="Indicative Purity Targets">
+          <Card title="Applications">
             <List
               items={[
-                "≥99.0% Sc₂O₃ (industrial / alloy grade)",
-                "Pathway to 99.9%+ for specialty aerospace and SOFC applications"
+                "Construction materials",
+                "Pigments and coatings",
+                "Water treatment coagulants",
+                "Feedstock for metallurgical or chemical industries"
               ]}
             />
           </Card>
         </div>
-        <Card title="Why Scandium Matters" className="mt-6">
-          <p>
-            Scandium is one of the most supply-constrained strategic metals globally, yet it
-            delivers disproportionate performance benefits:
-          </p>
-          <ul className="home-list">
-            <li>
-              Aluminum-scandium alloys:
-              <ul className="nested-list">
-                <li>20–40% weight reduction</li>
-                <li>Higher strength-to-weight ratios</li>
-                <li>Improved weldability and fatigue resistance</li>
-              </ul>
-            </li>
-            <li>
-              Solid Oxide Fuel Cells (SOFCs):
-              <ul className="nested-list">
-                <li>Scandia-stabilized zirconia electrolytes</li>
-                <li>Higher conductivity and durability</li>
-              </ul>
-            </li>
-          </ul>
-        </Card>
         <Card title="Value Proposition" className="mt-6">
           <List
             items={[
-              "No primary scandium mines required",
-              "Recovered from already-mined industrial residue",
-              "Enables domestic scandium supply chains for aerospace, defense, and hydrogen infrastructure"
+              "Converts the largest mass fraction of red mud into revenue-generating products",
+              "Eliminates long-term storage liability",
+              "Enables zero-waste plant operation"
             ]}
           />
         </Card>
+        <figure className="image-card image-card-tall mt-6">
+          <img
+            src="/output/IRON OXIDES.png"
+            alt="Iron Oxides Recovery and Applications"
+            loading="lazy"
+          />
+        </figure>
+      </Section>
+
+      <Section
+        id="titanium-title"
+        kicker="TITANIUM-BEARING MATERIALS"
+        title="Structural and Functional Materials for Energy & Mobility"
+      >
+        <div className="grid-2">
+          <Card title="Recovered Form">
+            <List
+              items={[
+                "Titanium-rich intermediates",
+                "Convertible to titanium dioxide (TiO₂) or downstream titanium compounds"
+              ]}
+            />
+            <p className="font-semibold mt-4 mb-2">Indicative Purity Targets</p>
+            <List
+              items={[
+                "90–98% TiO₂ equivalent, depending on downstream specification",
+                "Suitable for pigment, battery, and advanced materials processing"
+              ]}
+            />
+          </Card>
+          <Card title="Market Relevance">
+            <p>Titanium compounds are critical for:</p>
+            <List
+              items={[
+                "Battery technologies and energy storage systems",
+                "Aerospace structural components",
+                "Corrosion-resistant industrial equipment",
+                "Clean-energy manufacturing (solar, hydrogen)"
+              ]}
+            />
+          </Card>
+        </div>
+        <Card title="Value Proposition" className="mt-6">
+          <List
+            items={[
+              "Extracted without high-temperature chlorination or sulfate routes",
+              "Lower energy and environmental footprint",
+              "Complements REE recovery within the same processing train"
+            ]}
+          />
+        </Card>
+        <figure className="image-card image-card-large mt-6">
+          <img
+            src="/output/TITANIUM-BEARING MATERIALS.jpg"
+            alt="Titanium-Bearing Materials"
+            loading="lazy"
+          />
+        </figure>
       </Section>
 
       <Section
@@ -145,93 +190,77 @@ export default function OutputsPage() {
             ]}
           />
         </Card>
+        <figure className="image-card image-card-large mt-6">
+          <img
+            src="/output/RARE EARTH ELEMENTS (REEs).jpg"
+            alt="Rare Earth Elements Recovery"
+            loading="lazy"
+          />
+        </figure>
       </Section>
 
       <Section
-        id="titanium-title"
-        kicker="TITANIUM-BEARING MATERIALS"
-        title="Structural and Functional Materials for Energy & Mobility"
+        id="scandium-title"
+        kicker="SCANDIUM"
+        title="Ultra-High-Value Enabler for Aerospace and Advanced Energy Systems"
       >
         <div className="grid-2">
           <Card title="Recovered Form">
             <List
               items={[
-                "Titanium-rich intermediates",
-                "Convertible to titanium dioxide (TiO₂) or downstream titanium compounds"
-              ]}
-            />
-            <p className="font-semibold mt-4 mb-2">Indicative Purity Targets</p>
-            <List
-              items={[
-                "90–98% TiO₂ equivalent, depending on downstream specification",
-                "Suitable for pigment, battery, and advanced materials processing"
+                "Scandium oxide (Sc₂O₃) intermediate",
+                "Convertible to master alloys or high-purity oxide grades"
               ]}
             />
           </Card>
-          <Card title="Market Relevance">
-            <p>Titanium compounds are critical for:</p>
+          <Card title="Indicative Purity Targets">
             <List
               items={[
-                "Battery technologies and energy storage systems",
-                "Aerospace structural components",
-                "Corrosion-resistant industrial equipment",
-                "Clean-energy manufacturing (solar, hydrogen)"
+                "≥99.0% Sc₂O₃ (industrial / alloy grade)",
+                "Pathway to 99.9%+ for specialty aerospace and SOFC applications"
               ]}
             />
           </Card>
         </div>
+        <Card title="Why Scandium Matters" className="mt-6">
+          <p>
+            Scandium is one of the most supply-constrained strategic metals globally, yet it
+            delivers disproportionate performance benefits:
+          </p>
+          <ul className="home-list">
+            <li>
+              Aluminum-scandium alloys:
+              <ul className="nested-list">
+                <li>20–40% weight reduction</li>
+                <li>Higher strength-to-weight ratios</li>
+                <li>Improved weldability and fatigue resistance</li>
+              </ul>
+            </li>
+            <li>
+              Solid Oxide Fuel Cells (SOFCs):
+              <ul className="nested-list">
+                <li>Scandia-stabilized zirconia electrolytes</li>
+                <li>Higher conductivity and durability</li>
+              </ul>
+            </li>
+          </ul>
+        </Card>
         <Card title="Value Proposition" className="mt-6">
           <List
             items={[
-              "Extracted without high-temperature chlorination or sulfate routes",
-              "Lower energy and environmental footprint",
-              "Complements REE recovery within the same processing train"
+              "No primary scandium mines required",
+              "Recovered from already-mined industrial residue",
+              "Enables domestic scandium supply chains for aerospace, defense, and hydrogen infrastructure"
             ]}
           />
         </Card>
-      </Section>
-
-      <Section
-        id="iron-title"
-        kicker="IRON OXIDES"
-        title="Industrial-Grade Products with Immediate Offtake Potential"
-      >
-        <div className="grid-2">
-          <Card title="Recovered Form">
-            <List
-              items={[
-                "Iron oxide pigments",
-                "Iron-based coagulants and industrial intermediates"
-              ]}
-            />
-            <p className="font-semibold mt-4 mb-2">Indicative Purity Targets</p>
-            <List
-              items={[
-                "≥95% Fe₂O₃ for pigment and industrial use",
-                "Controlled particle size and phase composition"
-              ]}
-            />
-          </Card>
-          <Card title="Applications">
-            <List
-              items={[
-                "Construction materials",
-                "Pigments and coatings",
-                "Water treatment coagulants",
-                "Feedstock for metallurgical or chemical industries"
-              ]}
-            />
-          </Card>
-        </div>
-        <Card title="Value Proposition" className="mt-6">
-          <List
-            items={[
-              "Converts the largest mass fraction of red mud into revenue-generating products",
-              "Eliminates long-term storage liability",
-              "Enables zero-waste plant operation"
-            ]}
+        <figure className="image-card image-card-tall mt-6">
+          <img
+            src="/output/SCANDIUM SECTION.png"
+            alt="Scandium Recovery Process and Applications"
+            loading="lazy"
           />
-        </Card>
+        </figure>
       </Section>
 
       <Section
@@ -270,20 +299,12 @@ export default function OutputsPage() {
             ]}
           />
         </Card>
-        <figure className="card diagram outputs-diagram mt-6" aria-label="Multi-output architecture comparison">
-          <svg viewBox="0 0 960 280" role="img" aria-label="Single-metal versus multi-output model comparison">
-            <rect x="20" y="30" width="420" height="220" rx="12" />
-            <rect x="520" y="30" width="420" height="220" rx="12" />
-            <text x="230" y="70" textAnchor="middle">Single-Metal Projects</text>
-            <text x="730" y="70" textAnchor="middle">Enervoxa Multi-Output Model</text>
-            <text x="230" y="120" textAnchor="middle">One Commodity</text>
-            <text x="230" y="150" textAnchor="middle">High Volatility Exposure</text>
-            <text x="230" y="180" textAnchor="middle">Scale Constraints</text>
-            <text x="730" y="110" textAnchor="middle">25+ Recoverable Elements</text>
-            <text x="730" y="140" textAnchor="middle">Diversified Revenue Streams</text>
-            <text x="730" y="170" textAnchor="middle">Resilient Commodity-Cycle Economics</text>
-            <text x="730" y="200" textAnchor="middle">Single Feedstock, Single Plant</text>
-          </svg>
+        <figure className="image-card image-card-full mt-6">
+          <img
+            src="/output/MULTI-OUTPUT ADVANTAGE.jpg"
+            alt="Multi-Output Advantage Comparison"
+            loading="lazy"
+          />
         </figure>
       </Section>
 
@@ -312,23 +333,25 @@ export default function OutputsPage() {
             ]}
           />
         </Card>
-        <figure className="inline-media card mt-6">
+        <figure className="image-card image-card-large mt-6">
           <img
-            src="https://upload.wikimedia.org/wikipedia/commons/3/35/Titanium_dioxide_powder.jpg"
-            alt="Industrial mineral powder material"
+            src="/output/last.jpg"
+            alt="Specification-Driven Production"
             loading="lazy"
           />
         </figure>
       </Section>
 
-      <section className="positioning-section reveal" aria-labelledby="outputs-close-title">
-        <p className="kicker">STRATEGIC POSITIONING (Page Close)</p>
-        <h2 id="outputs-close-title">These are not by-products.</h2>
-        <p>
-          They are specification-driven critical materials recovered from waste—at scale, with
-          permanence.
-        </p>
-      </section>
+
+      <PositioningSection
+        title="These are not by-products."
+        description="They are specification-driven critical materials recovered from waste—at scale, with permanence."
+        buttons={[
+          { label: "Technology Details", href: "/technology" },
+          { label: "Partnership Models", href: "/partnerships" }
+        ]}
+        id="outputs-close-title"
+      />
     </div>
   );
 }

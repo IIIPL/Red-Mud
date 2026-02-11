@@ -3,6 +3,7 @@ import { Hero } from "@/components/ui/Hero";
 import { Section } from "@/components/ui/Section";
 import { Card } from "@/components/ui/Card";
 import { List } from "@/components/ui/List";
+import { PositioningSection } from "@/components/ui/PositioningSection";
 
 export const metadata: Metadata = {
   title: "Home"
@@ -90,11 +91,10 @@ export default function HomePage() {
   return (
     <div className="home-page">
       <Hero
-        kicker="HERO — Turning an Industrial Liability into a Strategic Mineral Asset"
         title="From Bauxite Residue to Critical Minerals"
         lead="A patented, commercially proven platform for extracting rare earths and strategic metals from red mud—at industrial scale, with no mining."
-        imageSrc="https://upload.wikimedia.org/wikipedia/commons/9/9a/Ajka_alumina_plant_red_mud_2010.jpg"
-        imageAlt="Industrial red mud reservoir and alumina infrastructure"
+        imageSrc="/home/From Bauxite Residue to Critical Minerals.jpg"
+        imageAlt="From Bauxite Residue to Critical Minerals"
       >
         <p>
           Red mud—bauxite residue from alumina refining—is one of the largest unmanaged
@@ -117,8 +117,8 @@ export default function HomePage() {
 
       <Section
         id="problem-title"
-        kicker="THE PROBLEM — A Global Stockpile with Strategic Consequences"
-        title="The World’s Largest Untapped Critical Minerals Resource — Stored as Waste"
+        kicker="THE PROBLEM"
+        title="A Global Stockpile with Strategic Consequences"
       >
         <div className="grid-2">
           <Card title="Globally">
@@ -127,6 +127,22 @@ export default function HomePage() {
           <Card title="India">
             <List items={indiaProblem} />
           </Card>
+        </div>
+        <div className="grid-2 mt-6">
+          <figure className="image-card">
+            <img
+              src="/home/THE PROBLEM.jpg"
+              alt="The Problem - Red Mud Storage"
+              loading="lazy"
+            />
+          </figure>
+          <figure className="image-card">
+            <img
+              src="/home/THE PROBLEM2.jpg"
+              alt="The Problem - Environmental Impact"
+              loading="lazy"
+            />
+          </figure>
         </div>
         <Card title="Strategic Implications" className="mt-6">
           <List items={implications} />
@@ -137,8 +153,8 @@ export default function HomePage() {
 
       <Section
         id="solution-title"
-        kicker="THE SOLUTION — Patented Low-Temperature Extraction at Commercial Scale"
-        title="A Granted, Defensible Technology — Not a Pilot Concept"
+        kicker="THE SOLUTION"
+        title="Patented Low-Temperature Extraction at Commercial Scale"
       >
         <p className="mb-6 text-dim">
           Our process is protected under a granted U.S. patent for red mud processing and
@@ -153,19 +169,35 @@ export default function HomePage() {
             <List items={commercialProof} />
           </Card>
         </div>
-        <figure className="inline-media card mt-6">
+        <figure className="image-card mt-6">
           <img
-            src="https://upload.wikimedia.org/wikipedia/commons/6/60/Aluminium_oxide_refinery.jpg"
-            alt="Industrial processing infrastructure"
+            src="/home/THE SOLUTION2.jpg"
+            alt="The Solution - Processing Technology"
             loading="lazy"
           />
         </figure>
+        <div className="grid-2 mt-6">
+          <figure className="image-card">
+            <img
+              src="/home/From Bauxite Residue to Critical Minerals2.jpg"
+              alt="Bauxite Residue Processing"
+              loading="lazy"
+            />
+          </figure>
+          <figure className="image-card">
+            <img
+              src="/home/From Bauxite Residue to Critical Minerals3.jpg"
+              alt="Critical Minerals Extraction"
+              loading="lazy"
+            />
+          </figure>
+        </div>
       </Section>
 
       <Section
         id="outputs-title"
-        kicker="OUTPUTS — Strategic Materials Recovered from Waste"
-        title="A Portfolio of High-Value, Strategic Outputs"
+        kicker="OUTPUTS"
+        title="Strategic Materials Recovered from Waste"
       >
         <div className="grid-2">
           <Card title="Critical & Strategic Materials">
@@ -174,6 +206,22 @@ export default function HomePage() {
           <Card title="Industrial By-Products">
             <List items={byProducts} />
           </Card>
+        </div>
+        <div className="grid-2 mt-6">
+          <figure className="image-card">
+            <img
+              src="/home/OUTPUTS.jpg"
+              alt="Strategic Outputs"
+              loading="lazy"
+            />
+          </figure>
+          <figure className="image-card">
+            <img
+              src="/home/OUTPUTS2.avif"
+              alt="Critical Materials Output"
+              loading="lazy"
+            />
+          </figure>
         </div>
         <Card title="Key Advantage" className="mt-6">
           <p>Red mud is already mined, crushed, and surface-stored.</p>
@@ -185,8 +233,8 @@ export default function HomePage() {
 
       <Section
         id="strategic-title"
-        kicker="WHY THIS MATTERS — Beyond Economics"
-        title="Strategic Alignment at National Scale"
+        kicker="WHY THIS MATTERS"
+        title="Beyond Economics"
       >
         <div className="grid-3">
           <Card title="Critical Minerals Security">
@@ -199,12 +247,28 @@ export default function HomePage() {
             <List items={strategicAlignment.circularity} />
           </Card>
         </div>
+        <div className="grid-2 mt-6">
+          <figure className="image-card">
+            <img
+              src="/home/WHY THIS MATTERS.png"
+              alt="Why This Matters - Strategic Importance"
+              loading="lazy"
+            />
+          </figure>
+          <figure className="image-card">
+            <img
+              src="/home/WHY THIS MATTERS2.jpg"
+              alt="Why This Matters - National Impact"
+              loading="lazy"
+            />
+          </figure>
+        </div>
       </Section>
 
       <Section
         id="deployment-title"
-        kicker="DEPLOYMENT MODEL — Built for Scale, Not Experimentation"
-        title="Modular Plant Architecture"
+        kicker="DEPLOYMENT MODEL"
+        title="Built for Scale, Not Experimentation"
       >
         <div className="grid-3">
           <Card title="Modular Plant Architecture">
@@ -234,11 +298,16 @@ export default function HomePage() {
         </figure>
       </Section>
 
-      <section className="positioning-section reveal" aria-labelledby="positioning-title">
-        <p className="kicker">POSITIONING STATEMENT (Footer-Ready)</p>
-        <h2 id="positioning-title">We do not mine critical minerals.</h2>
-        <p>We unlock them—responsibly—from the world’s largest industrial waste stream.</p>
-      </section>
+
+      <PositioningSection
+        title="We do not mine critical minerals."
+        description="We unlock them—responsibly—from the world's largest industrial waste stream."
+        buttons={[
+          { label: "Explore Technology", href: "/technology" },
+          { label: "View Outputs", href: "/outputs" },
+          { label: "India Strategy", href: "/india-strategy" }
+        ]}
+      />
     </div>
   );
 }

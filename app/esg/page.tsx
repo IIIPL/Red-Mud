@@ -3,6 +3,7 @@ import { Hero } from "@/components/ui/Hero";
 import { Section } from "@/components/ui/Section";
 import { Card } from "@/components/ui/Card";
 import { List } from "@/components/ui/List";
+import { PositioningSection } from "@/components/ui/PositioningSection";
 
 export const metadata: Metadata = {
   title: "ESG"
@@ -14,8 +15,8 @@ export default function EsgPage() {
       <Hero
         kicker="ESG & CIRCULAR ECONOMY"
         title="Converting a Permanent Environmental Liability into Measurable Environmental Value"
-        imageSrc="https://upload.wikimedia.org/wikipedia/commons/4/4a/Red_mud_spill_cleanup_2010.jpg"
-        imageAlt="Industrial red mud remediation infrastructure and containment work"
+        imageSrc="/ESG & CIRCULAR ECONOMY/Converting a Permanent Environmental Liability into Measurable Environmental Value.jpg"
+        imageAlt="Converting Environmental Liability into Value"
         id="esg-hero-title"
       >
         <p>
@@ -32,9 +33,9 @@ export default function EsgPage() {
       </Hero>
 
       <Section
-        id="waste-to-value-title"
-        kicker="WASTE-TO-VALUE: THE CORE ESG PRINCIPLE"
-        title="From Stockpile Risk to Productive Infrastructure"
+        id="core-title"
+        kicker="WASTE-TO-VALUE"
+        title="The Core ESG Principle"
       >
         <Card>
           <p>
@@ -92,6 +93,13 @@ export default function EsgPage() {
             ]}
           />
         </Card>
+        <figure className="image-card image-card-large mt-6">
+          <img
+            src="/ESG & CIRCULAR ECONOMY/LAND RECLAMATION & RISK ELIMINATION.webp"
+            alt="Land Reclamation and Risk Elimination"
+            loading="lazy"
+          />
+        </figure>
 
         <Card title="2. WATER RECOVERY & CLOSED-LOOP OPERATION" className="mt-6">
           <p>Red mud contains significant entrained process water and alkalinity.</p>
@@ -120,6 +128,13 @@ export default function EsgPage() {
             ]}
           />
         </Card>
+        <figure className="image-card image-card-large mt-6">
+          <img
+            src="/ESG & CIRCULAR ECONOMY/WATER RECOVERY.jpg"
+            alt="Water Recovery and Closed-Loop Operation"
+            loading="lazy"
+          />
+        </figure>
 
         <Card title="3. CARBON & ENERGY FOOTPRINT AVOIDANCE" className="mt-6">
           <p className="font-semibold mb-2">Process Advantage</p>
@@ -150,10 +165,10 @@ export default function EsgPage() {
           />
           <p>Final carbon accounting structured per site-specific LCA during deployment.</p>
         </Card>
-        <figure className="inline-media card mt-6">
+        <figure className="image-card image-card-large mt-6">
           <img
-            src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Wastewater_treatment_plant.jpg"
-            alt="Industrial wastewater and closed-loop treatment infrastructure"
+            src="/ESG & CIRCULAR ECONOMY/CARBON & ENERGY FOOTPRINT AVOIDANCE.jpg"
+            alt="Carbon and Energy Footprint Avoidance"
             loading="lazy"
           />
         </figure>
@@ -161,8 +176,8 @@ export default function EsgPage() {
 
       <Section
         id="circular-title"
-        kicker="CIRCULAR ECONOMY IN PRACTICE — NOT IN THEORY"
-        title="Full Material Utilization"
+        kicker="CIRCULAR ECONOMY IN PRACTICE"
+        title="Not in Theory"
       >
         <Card>
           <p>
@@ -194,6 +209,13 @@ export default function EsgPage() {
             ]}
           />
         </Card>
+        <figure className="image-card image-card-large mt-6">
+          <img
+            src="/ESG & CIRCULAR ECONOMY/CIRCULAR ECONOMY IN PRACTICE.jpg"
+            alt="Circular Economy in Practice"
+            loading="lazy"
+          />
+        </figure>
       </Section>
 
       <Section
@@ -228,12 +250,19 @@ export default function EsgPage() {
             ]}
           />
         </Card>
+        <figure className="image-card image-card-tall mt-6">
+          <img
+            src="/ESG & CIRCULAR ECONOMY/SOCIAL & GOVERNANCE DIMENSIONS.png"
+            alt="Social and Governance Dimensions"
+            loading="lazy"
+          />
+        </figure>
       </Section>
 
       <Section
         id="kpi-title"
-        kicker="ESG PERFORMANCE — SAMPLE KPI FRAMEWORK"
-        title="Audit-Ready KPI Matrix"
+        kicker="ESG PERFORMANCE"
+        title="Sample KPI Framework"
       >
         <Card>
           <div className="kpi-table-wrap" role="region" aria-label="ESG KPI framework table" tabIndex={0}>
@@ -297,21 +326,16 @@ export default function EsgPage() {
         </figure>
       </Section>
 
-      <section className="positioning-section reveal" aria-labelledby="esg-close-title">
-        <p className="kicker">STRATEGIC ESG POSITIONING (Page Close)</p>
-        <h2 id="esg-close-title">This is not waste management.</h2>
-        <p>
-          It is permanent environmental risk removal—monetized through critical materials.
-        </p>
-        <p>Every tonne processed delivers:</p>
-        <List
-          items={[
-            "Environmental remediation",
-            "Strategic mineral supply",
-            "Verifiable ESG performance"
-          ]}
-        />
-      </section>
+
+      <PositioningSection
+        title="This is not waste management."
+        description="It is permanent environmental risk removal—monetized through critical materials."
+        buttons={[
+          { label: "India Strategy", href: "/india-strategy" },
+          { label: "Partnership Models", href: "/partnerships" }
+        ]}
+        id="esg-close-title"
+      />
     </div>
   );
 }

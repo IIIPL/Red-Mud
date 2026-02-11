@@ -3,6 +3,7 @@ import { Hero } from "@/components/ui/Hero";
 import { Section } from "@/components/ui/Section";
 import { Card } from "@/components/ui/Card";
 import { List } from "@/components/ui/List";
+import { PositioningSection } from "@/components/ui/PositioningSection";
 
 export const metadata: Metadata = {
   title: "India Strategy"
@@ -13,9 +14,9 @@ export default function IndiaStrategyPage() {
     <div className="home-page india-page">
       <Hero
         kicker="INDIA STRATEGY & POLICY"
-        title="Turning India’s Largest Industrial Liability into a Strategic Mineral Advantage"
-        imageSrc="https://upload.wikimedia.org/wikipedia/commons/e/e8/Vedanta_aluminium_smelter%2C_Jharsuguda.jpg"
-        imageAlt="Large-scale Indian industrial metals and minerals infrastructure"
+        title="Turning India's Largest Industrial Liability into a Strategic Mineral Advantage"
+        imageSrc="/INDIA STRATEGY & POLICY/HERO SECTION.jpg"
+        imageAlt="India Strategy for Red Mud Processing"
         id="india-hero-title"
       >
         <p>
@@ -33,8 +34,8 @@ export default function IndiaStrategyPage() {
 
       <Section
         id="reality-title"
-        kicker="INDIA’S RED MUD REALITY — SCALE, CONCENTRATION, AND RISK"
-        title="Annual Generation & Utilization"
+        kicker="INDIA'S RED MUD REALITY"
+        title="Scale, Concentration, and Risk"
       >
         <Card>
           <List
@@ -95,8 +96,8 @@ export default function IndiaStrategyPage() {
 
       <Section
         id="potential-title"
-        kicker="STRATEGIC MINERAL POTENTIAL — HIDING IN PLAIN SIGHT"
-        title="Red mud generated from Indian bauxites typically contains:"
+        kicker="STRATEGIC MINERAL POTENTIAL"
+        title="Hiding in Plain Sight"
       >
         <Card>
           <List
@@ -120,12 +121,19 @@ export default function IndiaStrategyPage() {
           />
           <p>This is a strategic materials opportunity without new mining.</p>
         </Card>
+        <figure className="image-card image-card-large mt-6">
+          <img
+            src="/INDIA STRATEGY & POLICY/Strategic Mineral Potential.jpg"
+            alt="Strategic Mineral Potential in Red Mud"
+            loading="lazy"
+          />
+        </figure>
       </Section>
 
       <Section
         id="policy-title"
-        kicker="POLICY ALIGNMENT — BUILT FOR INDIA’S NATIONAL MISSIONS"
-        title="1. Critical Minerals Security"
+        kicker="POLICY ALIGNMENT"
+        title="Built for India's National Missions"
       >
         <Card>
           <p>
@@ -197,6 +205,20 @@ export default function IndiaStrategyPage() {
             ]}
           />
         </Card>
+        <figure className="image-card image-card-tall mt-6">
+          <img
+            src="/INDIA STRATEGY & POLICY/Policy Alignment.webp"
+            alt="Policy Alignment Framework"
+            loading="lazy"
+          />
+        </figure>
+        <figure className="image-card image-card-tall mt-6">
+          <img
+            src="/INDIA STRATEGY & POLICY/Circular Economy.png"
+            alt="Circular Economy Model"
+            loading="lazy"
+          />
+        </figure>
       </Section>
 
       <Section
@@ -230,6 +252,13 @@ export default function IndiaStrategyPage() {
             <List items={["Odisha", "Jharkhand", "Uttar Pradesh"]} />
           </Card>
         </div>
+        <figure className="image-card image-card-large mt-6">
+          <img
+            src="/INDIA STRATEGY & POLICY/Deployment Strategy for India.jpg"
+            alt="Deployment Strategy for India"
+            loading="lazy"
+          />
+        </figure>
       </Section>
 
       <Section
@@ -254,15 +283,25 @@ export default function IndiaStrategyPage() {
           <p>Strategic mineral independence</p>
           <p>This technology delivers both simultaneously.</p>
         </Card>
+        <figure className="image-card image-card-large mt-6">
+          <img
+            src="/INDIA STRATEGY & POLICY/Role of Government & Institutions.jpg"
+            alt="Role of Government and Institutions"
+            loading="lazy"
+          />
+        </figure>
       </Section>
 
-      <section className="positioning-section reveal" aria-labelledby="india-close-title">
-        <p className="kicker">STRATEGIC POSITIONING (Page Close)</p>
-        <h2 id="india-close-title">India already owns one of the world’s largest critical-minerals resources.</h2>
-        <p>It is stored as red mud.</p>
-        <p>The question is no longer whether to remediate it—</p>
-        <p>but whether to do so in a way that strengthens national capability.</p>
-      </section>
+
+      <PositioningSection
+        title="India already owns one of the world's largest critical-minerals resources."
+        description="It is stored as red mud. The question is no longer whether to remediate it—but whether to do so in a way that strengthens national capability."
+        buttons={[
+          { label: "Technology Details", href: "/technology" },
+          { label: "Partnership Models", href: "/partnerships" }
+        ]}
+        id="india-close-title"
+      />
     </div>
   );
 }

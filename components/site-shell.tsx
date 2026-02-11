@@ -8,7 +8,6 @@ import type { ReactNode } from "react";
 const navigation = [
   { href: "/", label: "Home" },
   { href: "/technology", label: "Technology" },
-  { href: "/process", label: "Process" },
   { href: "/outputs", label: "Outputs" },
   { href: "/esg", label: "ESG" },
   { href: "/india-strategy", label: "India Strategy" },
