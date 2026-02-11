@@ -1,4 +1,8 @@
 import type { Metadata } from "next";
+import { Hero } from "@/components/ui/Hero";
+import { Section } from "@/components/ui/Section";
+import { Card } from "@/components/ui/Card";
+import { List } from "@/components/ui/List";
 
 export const metadata: Metadata = {
   title: "Home"
@@ -82,171 +86,138 @@ const deployment = {
   ]
 };
 
-function BulletList({ items }: { items: string[] }) {
-  return (
-    <ul className="home-list">
-      {items.map((item) => (
-        <li key={item}>{item}</li>
-      ))}
-    </ul>
-  );
-}
-
 export default function HomePage() {
   return (
     <div className="home-page">
-      <section className="hero-panel reveal" aria-labelledby="hero-title">
-        <div className="hero-copy">
-          <p className="kicker">HERO — Turning an Industrial Liability into a Strategic Mineral Asset</p>
-          <h1 id="hero-title">From Bauxite Residue to Critical Minerals</h1>
-          <p className="lead">
-            A patented, commercially proven platform for extracting rare earths and strategic
-            metals from red mud—at industrial scale, with no mining.
-          </p>
-          <p>
-            Red mud—bauxite residue from alumina refining—is one of the largest unmanaged
-            industrial waste streams on earth. Our technology converts this long-term
-            environmental liability into a domestic source of critical minerals, including
-            Scandium and Rare Earth Elements (REEs), while permanently reducing legacy stockpiles.
-          </p>
-          <div>
-            <p className="list-title">Outcome:</p>
-            <BulletList
-              items={[
-                "Strategic minerals recovered",
-                "Storage liabilities eliminated",
-                "No new mining, no tailings expansion",
-                "Immediate pathway to commercial deployment"
-              ]}
-            />
-          </div>
-        </div>
-        <figure className="hero-media">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Ajka_alumina_plant_red_mud_2010.jpg"
-            alt="Industrial red mud reservoir and alumina infrastructure"
-            loading="eager"
+      <Hero
+        kicker="HERO — Turning an Industrial Liability into a Strategic Mineral Asset"
+        title="From Bauxite Residue to Critical Minerals"
+        lead="A patented, commercially proven platform for extracting rare earths and strategic metals from red mud—at industrial scale, with no mining."
+        imageSrc="https://upload.wikimedia.org/wikipedia/commons/9/9a/Ajka_alumina_plant_red_mud_2010.jpg"
+        imageAlt="Industrial red mud reservoir and alumina infrastructure"
+      >
+        <p>
+          Red mud—bauxite residue from alumina refining—is one of the largest unmanaged
+          industrial waste streams on earth. Our technology converts this long-term
+          environmental liability into a domestic source of critical minerals, including
+          Scandium and Rare Earth Elements (REEs), while permanently reducing legacy stockpiles.
+        </p>
+        <div>
+          <p className="list-title">Outcome:</p>
+          <List
+            items={[
+              "Strategic minerals recovered",
+              "Storage liabilities eliminated",
+              "No new mining, no tailings expansion",
+              "Immediate pathway to commercial deployment"
+            ]}
           />
-        </figure>
-      </section>
+        </div>
+      </Hero>
 
-      <section className="content-section reveal" aria-labelledby="problem-title">
-        <div className="section-heading">
-          <p className="kicker">THE PROBLEM — A Global Stockpile with Strategic Consequences</p>
-          <h2 id="problem-title">The World’s Largest Untapped Critical Minerals Resource — Stored as Waste</h2>
-        </div>
+      <Section
+        id="problem-title"
+        kicker="THE PROBLEM — A Global Stockpile with Strategic Consequences"
+        title="The World’s Largest Untapped Critical Minerals Resource — Stored as Waste"
+      >
         <div className="grid-2">
-          <article className="card">
-            <h3>Globally</h3>
-            <BulletList items={globalProblem} />
-          </article>
-          <article className="card">
-            <h3>India</h3>
-            <BulletList items={indiaProblem} />
-          </article>
+          <Card title="Globally">
+            <List items={globalProblem} />
+          </Card>
+          <Card title="India">
+            <List items={indiaProblem} />
+          </Card>
         </div>
-        <article className="card">
-          <h3>Strategic Implications</h3>
-          <BulletList items={implications} />
+        <Card title="Strategic Implications" className="mt-6">
+          <List items={implications} />
           <p>This is not a waste problem.</p>
           <p>It is a missed critical-minerals opportunity at national scale.</p>
-        </article>
-      </section>
+        </Card>
+      </Section>
 
-      <section className="content-section reveal" aria-labelledby="solution-title">
-        <div className="section-heading">
-          <p className="kicker">THE SOLUTION — Patented Low-Temperature Extraction at Commercial Scale</p>
-          <h2 id="solution-title">A Granted, Defensible Technology — Not a Pilot Concept</h2>
-        </div>
-        <p>
+      <Section
+        id="solution-title"
+        kicker="THE SOLUTION — Patented Low-Temperature Extraction at Commercial Scale"
+        title="A Granted, Defensible Technology — Not a Pilot Concept"
+      >
+        <p className="mb-6 text-dim">
           Our process is protected under a granted U.S. patent for red mud processing and
           rare-earth extraction, developed specifically to operate on highly alkaline bauxite
           residue.
         </p>
         <div className="grid-2">
-          <article className="card">
-            <h3>Core Characteristics</h3>
-            <BulletList items={coreCharacteristics} />
-          </article>
-          <article className="card">
-            <h3>Commercial Proof</h3>
-            <BulletList items={commercialProof} />
-          </article>
+          <Card title="Core Characteristics">
+            <List items={coreCharacteristics} />
+          </Card>
+          <Card title="Commercial Proof">
+            <List items={commercialProof} />
+          </Card>
         </div>
-        <figure className="inline-media card">
+        <figure className="inline-media card mt-6">
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/6/60/Aluminium_oxide_refinery.jpg"
             alt="Industrial processing infrastructure"
             loading="lazy"
           />
         </figure>
-      </section>
+      </Section>
 
-      <section className="content-section reveal" aria-labelledby="outputs-title">
-        <div className="section-heading">
-          <p className="kicker">OUTPUTS — Strategic Materials Recovered from Waste</p>
-          <h2 id="outputs-title">A Portfolio of High-Value, Strategic Outputs</h2>
-        </div>
+      <Section
+        id="outputs-title"
+        kicker="OUTPUTS — Strategic Materials Recovered from Waste"
+        title="A Portfolio of High-Value, Strategic Outputs"
+      >
         <div className="grid-2">
-          <article className="card">
-            <h3>Critical &amp; Strategic Materials</h3>
-            <BulletList items={criticalOutputs} />
-          </article>
-          <article className="card">
-            <h3>Industrial By-Products</h3>
-            <BulletList items={byProducts} />
-          </article>
+          <Card title="Critical & Strategic Materials">
+            <List items={criticalOutputs} />
+          </Card>
+          <Card title="Industrial By-Products">
+            <List items={byProducts} />
+          </Card>
         </div>
-        <article className="card">
-          <h3>Key Advantage</h3>
+        <Card title="Key Advantage" className="mt-6">
           <p>Red mud is already mined, crushed, and surface-stored.</p>
           <p>
             There is no drilling, no blasting, no beneficiation, and no tailings creation.
           </p>
-        </article>
-      </section>
+        </Card>
+      </Section>
 
-      <section className="content-section reveal" aria-labelledby="strategic-title">
-        <div className="section-heading">
-          <p className="kicker">WHY THIS MATTERS — Beyond Economics</p>
-          <h2 id="strategic-title">Strategic Alignment at National Scale</h2>
-        </div>
+      <Section
+        id="strategic-title"
+        kicker="WHY THIS MATTERS — Beyond Economics"
+        title="Strategic Alignment at National Scale"
+      >
         <div className="grid-3">
-          <article className="card">
-            <h3>Critical Minerals Security</h3>
-            <BulletList items={strategicAlignment.security} />
-          </article>
-          <article className="card">
-            <h3>Environmental Resolution</h3>
-            <BulletList items={strategicAlignment.environment} />
-          </article>
-          <article className="card">
-            <h3>Industrial Circularity</h3>
-            <BulletList items={strategicAlignment.circularity} />
-          </article>
+          <Card title="Critical Minerals Security">
+            <List items={strategicAlignment.security} />
+          </Card>
+          <Card title="Environmental Resolution">
+            <List items={strategicAlignment.environment} />
+          </Card>
+          <Card title="Industrial Circularity">
+            <List items={strategicAlignment.circularity} />
+          </Card>
         </div>
-      </section>
+      </Section>
 
-      <section className="content-section reveal" aria-labelledby="deployment-title">
-        <div className="section-heading">
-          <p className="kicker">DEPLOYMENT MODEL — Built for Scale, Not Experimentation</p>
-          <h2 id="deployment-title">Modular Plant Architecture</h2>
-        </div>
+      <Section
+        id="deployment-title"
+        kicker="DEPLOYMENT MODEL — Built for Scale, Not Experimentation"
+        title="Modular Plant Architecture"
+      >
         <div className="grid-3">
-          <article className="card">
-            <h3>Modular Plant Architecture</h3>
-            <BulletList items={deployment.architecture} />
-          </article>
-          <article className="card">
-            <h3>Integration Options</h3>
-            <BulletList items={deployment.integration} />
-          </article>
-          <article className="card">
-            <h3>Commercial Structures</h3>
-            <BulletList items={deployment.commercial} />
-          </article>
+          <Card title="Modular Plant Architecture">
+            <List items={deployment.architecture} />
+          </Card>
+          <Card title="Integration Options">
+            <List items={deployment.integration} />
+          </Card>
+          <Card title="Commercial Structures">
+            <List items={deployment.commercial} />
+          </Card>
         </div>
-        <figure className="card diagram" aria-label="Deployment model diagram">
+        <figure className="card diagram mt-6" aria-label="Deployment model diagram">
           <svg viewBox="0 0 920 220" role="img" aria-label="Flow of modular deployment options">
             <rect x="20" y="60" width="220" height="100" rx="10" />
             <rect x="350" y="20" width="220" height="80" rx="10" />
@@ -261,7 +232,7 @@ export default function HomePage() {
             <path d="M570 160H680" />
           </svg>
         </figure>
-      </section>
+      </Section>
 
       <section className="positioning-section reveal" aria-labelledby="positioning-title">
         <p className="kicker">POSITIONING STATEMENT (Footer-Ready)</p>
