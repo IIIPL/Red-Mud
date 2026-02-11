@@ -3,7 +3,6 @@ import type { MetadataRoute } from "next";
 const routes = [
   "",
   "/technology",
-  "/process",
   "/outputs",
   "/esg",
   "/india-strategy",

@@ -1,13 +1,13 @@
 "use client";
 
 import Link from "next/link";
+import { Footer } from "@/components/ui/Footer";
 import { useState } from "react";
 import type { ReactNode } from "react";
 
 const navigation = [
   { href: "/", label: "Home" },
   { href: "/technology", label: "Technology" },
-  { href: "/process", label: "Process" },
   { href: "/outputs", label: "Outputs" },
   { href: "/esg", label: "ESG" },
   { href: "/india-strategy", label: "India Strategy" },
@@ -65,49 +65,7 @@ export function SiteShell({ children }: SiteShellProps) {
           {children}
         </main>
 
-        <footer className="site-footer" aria-label="Site footer">
-          <div className="container footer-grid">
-            <section className="footer-positioning" aria-labelledby="footer-positioning-title">
-              <h2 id="footer-positioning-title">Strategic Positioning</h2>
-              <p>
-                Red mud—bauxite residue from alumina refining—is one of the largest unmanaged
-                industrial waste streams on earth. Our platform transforms this environmental
-                liability into a domestic source of critical minerals with infrastructure-grade
-                reliability.
-              </p>
-              <p className="credibility-note">
-                Built for institutional partners focused on long-term supply security, operational
-                rigor, and responsible industrial outcomes.
-              </p>
-            </section>
-
-            <nav className="footer-nav" aria-label="Secondary navigation">
-              <h2>Explore</h2>
-              <ul>
-                {navigation.map((item) => (
-                  <li key={`footer-${item.href}`}>
-                    <Link href={item.href}>{item.label}</Link>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          </div>
-
-          <div className="container legal-row" role="contentinfo">
-            <p>© {new Date().getFullYear()} Red Mud Critical Minerals Platform. All rights reserved.</p>
-            <ul>
-              <li>
-                <Link href="/privacy">Privacy</Link>
-              </li>
-              <li>
-                <Link href="/terms">Terms</Link>
-              </li>
-              <li>
-                <Link href="/contact">Contact</Link>
-              </li>
-            </ul>
-          </div>
-        </footer>
+        <Footer />
       </div>
     </>
   );

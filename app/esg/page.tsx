@@ -1,60 +1,48 @@
 import type { Metadata } from "next";
+import { Hero } from "@/components/ui/Hero";
+import { Section } from "@/components/ui/Section";
+import { Card } from "@/components/ui/Card";
+import { List } from "@/components/ui/List";
+import { PositioningSection } from "@/components/ui/PositioningSection";
 
 export const metadata: Metadata = {
   title: "ESG"
 };
 
-function BulletList({ items }: { items: string[] }) {
-  return (
-    <ul className="home-list">
-      {items.map((item) => (
-        <li key={item}>{item}</li>
-      ))}
-    </ul>
-  );
-}
-
 export default function EsgPage() {
   return (
     <div className="home-page esg-page">
-      <section className="hero-panel reveal" aria-labelledby="esg-hero-title">
-        <div className="hero-copy">
-          <p className="kicker">ESG &amp; CIRCULAR ECONOMY</p>
-          <h1 id="esg-hero-title">
-            Converting a Permanent Environmental Liability into Measurable Environmental Value
-          </h1>
-          <p>
-            Red mud storage is not a temporary challenge—it is a multi-decade environmental
-            obligation.
-          </p>
-          <p>
-            Our platform addresses this at the root by eliminating the waste stream entirely,
-            converting bauxite residue into marketable materials while restoring land, water
-            balance, and long-term environmental stability.
-          </p>
-          <p>This is not offset-based sustainability.</p>
-          <p>It is physical remediation with quantifiable outcomes.</p>
-        </div>
-        <figure className="hero-media">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Red_mud_spill_cleanup_2010.jpg"
-            alt="Industrial red mud remediation infrastructure and containment work"
-            loading="eager"
-          />
-        </figure>
-      </section>
+      <Hero
+        kicker="ESG & CIRCULAR ECONOMY"
+        title="Converting a Permanent Environmental Liability into Measurable Environmental Value"
+        imageSrc="/ESG & CIRCULAR ECONOMY/Converting a Permanent Environmental Liability into Measurable Environmental Value.jpg"
+        imageAlt="Converting Environmental Liability into Value"
+        id="esg-hero-title"
+      >
+        <p>
+          Red mud storage is not a temporary challenge—it is a multi-decade environmental
+          obligation.
+        </p>
+        <p>
+          Our platform addresses this at the root by eliminating the waste stream entirely,
+          converting bauxite residue into marketable materials while restoring land, water
+          balance, and long-term environmental stability.
+        </p>
+        <p>This is not offset-based sustainability.</p>
+        <p>It is physical remediation with quantifiable outcomes.</p>
+      </Hero>
 
-      <section className="content-section reveal" aria-labelledby="waste-to-value-title">
-        <div className="section-heading">
-          <p className="kicker">WASTE-TO-VALUE: THE CORE ESG PRINCIPLE</p>
-          <h2 id="waste-to-value-title">From Stockpile Risk to Productive Infrastructure</h2>
-        </div>
-        <article className="card">
+      <Section
+        id="core-title"
+        kicker="WASTE-TO-VALUE"
+        title="The Core ESG Principle"
+      >
+        <Card>
           <p>
             Globally, more than 4 billion tonnes of red mud sit in engineered ponds, with
             ~150 million tonnes added annually. Each tonne represents:
           </p>
-          <BulletList
+          <List
             items={[
               "Long-term containment risk",
               "Ongoing monitoring and maintenance cost",
@@ -63,7 +51,7 @@ export default function EsgPage() {
             ]}
           />
           <p>Our technology permanently removes red mud from storage by:</p>
-          <BulletList
+          <List
             items={[
               "Recovering critical minerals",
               "Converting the remaining matrix into stable industrial materials",
@@ -72,25 +60,24 @@ export default function EsgPage() {
           />
           <p>Result:</p>
           <p>Zero tailings. Zero net accumulation.</p>
-        </article>
-      </section>
+        </Card>
+      </Section>
 
-      <section className="content-section reveal" aria-labelledby="pillars-title">
-        <div className="section-heading">
-          <p className="kicker">ENVIRONMENTAL IMPACT PILLARS</p>
-          <h2 id="pillars-title">1. LAND RECLAMATION &amp; RISK ELIMINATION</h2>
-        </div>
-        <article className="card">
-          <h3>Impact Mechanism</h3>
-          <BulletList
+      <Section
+        id="pillars-title"
+        kicker="ENVIRONMENTAL IMPACT PILLARS"
+        title="1. LAND RECLAMATION & RISK ELIMINATION"
+      >
+        <Card title="Impact Mechanism">
+          <List
             items={[
               "Each tonne processed permanently reduces stored residue volume",
               "Legacy ponds are progressively emptied and stabilized",
               "No requirement for new pond construction or expansion"
             ]}
           />
-          <h3>Measured KPIs</h3>
-          <BulletList
+          <p className="font-semibold mt-4 mb-2">Measured KPIs</p>
+          <List
             items={[
               "1 million tonnes/year processed = 1 million tonnes/year liability eliminated",
               "Progressive reduction of long-term pond management horizons",
@@ -98,28 +85,34 @@ export default function EsgPage() {
             ]}
           />
           <p>This materially lowers:</p>
-          <BulletList
+          <List
             items={[
               "Tailings dam failure risk",
               "Long-term groundwater contamination exposure",
               "Intergenerational environmental liability"
             ]}
           />
-        </article>
+        </Card>
+        <figure className="image-card image-card-large mt-6">
+          <img
+            src="/ESG & CIRCULAR ECONOMY/LAND RECLAMATION & RISK ELIMINATION.webp"
+            alt="Land Reclamation and Risk Elimination"
+            loading="lazy"
+          />
+        </figure>
 
-        <article className="card">
-          <h2>2. WATER RECOVERY &amp; CLOSED-LOOP OPERATION</h2>
+        <Card title="2. WATER RECOVERY & CLOSED-LOOP OPERATION" className="mt-6">
           <p>Red mud contains significant entrained process water and alkalinity.</p>
-          <h3>Our Approach</h3>
-          <BulletList
+          <p className="font-semibold mt-4 mb-2">Our Approach</p>
+          <List
             items={[
               "Integrated water recovery at multiple process stages",
               "Closed-loop reuse within the plant",
               "No continuous liquid discharge to the environment"
             ]}
           />
-          <h3>Measured KPIs</h3>
-          <BulletList
+          <p className="font-semibold mt-4 mb-2">Measured KPIs</p>
+          <List
             items={[
               ">90% process water recycled internally",
               "Reduced freshwater draw for adjacent refineries",
@@ -127,19 +120,25 @@ export default function EsgPage() {
             ]}
           />
           <p>This directly supports:</p>
-          <BulletList
+          <List
             items={[
               "Water-stressed industrial regions",
               "Zero-liquid-discharge (ZLD) compliance pathways",
               "Long-term water security for alumina operations"
             ]}
           />
-        </article>
+        </Card>
+        <figure className="image-card image-card-large mt-6">
+          <img
+            src="/ESG & CIRCULAR ECONOMY/WATER RECOVERY.jpg"
+            alt="Water Recovery and Closed-Loop Operation"
+            loading="lazy"
+          />
+        </figure>
 
-        <article className="card">
-          <h2>3. CARBON &amp; ENERGY FOOTPRINT AVOIDANCE</h2>
-          <h3>Process Advantage</h3>
-          <BulletList
+        <Card title="3. CARBON & ENERGY FOOTPRINT AVOIDANCE" className="mt-6">
+          <p className="font-semibold mb-2">Process Advantage</p>
+          <List
             items={[
               "Operates below 100 °C",
               "No combustion",
@@ -147,7 +146,7 @@ export default function EsgPage() {
               "No mining, hauling, or beneficiation"
             ]}
           />
-          <h3>Avoided Emissions (Relative Basis)</h3>
+          <p className="font-semibold mt-4 mb-2">Avoided Emissions (Relative Basis)</p>
           <p>Avoids emissions associated with:</p>
           <ul className="home-list">
             <li>New REE mining</li>
@@ -157,42 +156,42 @@ export default function EsgPage() {
           <p>
             Eliminates ongoing emissions tied to red-mud pond maintenance and expansion
           </p>
-          <h3>Indicative KPI (Conservative)</h3>
-          <BulletList
+          <p className="font-semibold mt-4 mb-2">Indicative KPI (Conservative)</p>
+          <List
             items={[
               "Significant CO₂-equivalent avoidance per tonne compared to conventional mining-to-refining routes",
               "Enables low-carbon supply chains for EVs, aerospace, and clean energy"
             ]}
           />
           <p>Final carbon accounting structured per site-specific LCA during deployment.</p>
-        </article>
-        <figure className="inline-media card">
+        </Card>
+        <figure className="image-card image-card-large mt-6">
           <img
-            src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Wastewater_treatment_plant.jpg"
-            alt="Industrial wastewater and closed-loop treatment infrastructure"
+            src="/ESG & CIRCULAR ECONOMY/CARBON & ENERGY FOOTPRINT AVOIDANCE.jpg"
+            alt="Carbon and Energy Footprint Avoidance"
             loading="lazy"
           />
         </figure>
-      </section>
+      </Section>
 
-      <section className="content-section reveal" aria-labelledby="circular-title">
-        <div className="section-heading">
-          <p className="kicker">CIRCULAR ECONOMY IN PRACTICE — NOT IN THEORY</p>
-          <h2 id="circular-title">Full Material Utilization</h2>
-        </div>
-        <article className="card">
+      <Section
+        id="circular-title"
+        kicker="CIRCULAR ECONOMY IN PRACTICE"
+        title="Not in Theory"
+      >
+        <Card>
           <p>
             Unlike partial-use pathways (cement blending, bricks, road fill), this platform:
           </p>
-          <BulletList
+          <List
             items={[
               "Utilizes 100% of incoming material",
               "Generates multiple product streams",
               "Produces no residual waste"
             ]}
           />
-          <h3>Recovered Outputs</h3>
-          <BulletList
+          <p className="font-semibold mt-4 mb-2">Recovered Outputs</p>
+          <List
             items={[
               "Scandium",
               "Rare earth elements",
@@ -202,32 +201,39 @@ export default function EsgPage() {
             ]}
           />
           <p>This aligns directly with:</p>
-          <BulletList
+          <List
             items={[
               "Circular economy mandates",
               "Extended producer responsibility logic",
               "Industrial symbiosis models"
             ]}
           />
-        </article>
-      </section>
+        </Card>
+        <figure className="image-card image-card-large mt-6">
+          <img
+            src="/ESG & CIRCULAR ECONOMY/CIRCULAR ECONOMY IN PRACTICE.jpg"
+            alt="Circular Economy in Practice"
+            loading="lazy"
+          />
+        </figure>
+      </Section>
 
-      <section className="content-section reveal" aria-labelledby="social-title">
-        <div className="section-heading">
-          <p className="kicker">SOCIAL &amp; GOVERNANCE DIMENSIONS</p>
-          <h2 id="social-title">Community &amp; Regulatory Confidence</h2>
-        </div>
-        <article className="card">
-          <BulletList
+      <Section
+        id="social-title"
+        kicker="SOCIAL & GOVERNANCE DIMENSIONS"
+        title="Community & Regulatory Confidence"
+      >
+        <Card>
+          <List
             items={[
               "Reduced long-term environmental risk near communities",
               "Shrinking footprint of hazardous alkaline material",
               "Improved transparency through measurable remediation rates"
             ]}
           />
-          <h3>Governance &amp; Reporting</h3>
+          <p className="font-semibold mt-4 mb-2">Governance & Reporting</p>
           <p>Physical KPIs, not estimates:</p>
-          <BulletList
+          <List
             items={[
               "Tonnes processed",
               "Tonnes remediated",
@@ -236,22 +242,29 @@ export default function EsgPage() {
             ]}
           />
           <p>Suitable for integration into:</p>
-          <BulletList
+          <List
             items={[
               "ESG disclosures",
               "Sustainability reports",
               "Lender and DFI monitoring frameworks"
             ]}
           />
-        </article>
-      </section>
+        </Card>
+        <figure className="image-card image-card-tall mt-6">
+          <img
+            src="/ESG & CIRCULAR ECONOMY/SOCIAL & GOVERNANCE DIMENSIONS.png"
+            alt="Social and Governance Dimensions"
+            loading="lazy"
+          />
+        </figure>
+      </Section>
 
-      <section className="content-section reveal" aria-labelledby="kpi-title">
-        <div className="section-heading">
-          <p className="kicker">ESG PERFORMANCE — SAMPLE KPI FRAMEWORK</p>
-          <h2 id="kpi-title">Audit-Ready KPI Matrix</h2>
-        </div>
-        <article className="card">
+      <Section
+        id="kpi-title"
+        kicker="ESG PERFORMANCE"
+        title="Sample KPI Framework"
+      >
+        <Card>
           <div className="kpi-table-wrap" role="region" aria-label="ESG KPI framework table" tabIndex={0}>
             <table className="kpi-table">
               <thead>
@@ -295,8 +308,8 @@ export default function EsgPage() {
               </tbody>
             </table>
           </div>
-        </article>
-        <figure className="card diagram esg-diagram" aria-label="ESG conversion flow diagram">
+        </Card>
+        <figure className="card diagram esg-diagram mt-6" aria-label="ESG conversion flow diagram">
           <svg viewBox="0 0 1000 240" role="img" aria-label="Waste-to-value ESG material flow">
             <rect x="20" y="50" width="260" height="130" rx="12" />
             <rect x="370" y="50" width="260" height="130" rx="12" />
@@ -311,23 +324,18 @@ export default function EsgPage() {
             <path d="M630 115H720" />
           </svg>
         </figure>
-      </section>
+      </Section>
 
-      <section className="positioning-section reveal" aria-labelledby="esg-close-title">
-        <p className="kicker">STRATEGIC ESG POSITIONING (Page Close)</p>
-        <h2 id="esg-close-title">This is not waste management.</h2>
-        <p>
-          It is permanent environmental risk removal—monetized through critical materials.
-        </p>
-        <p>Every tonne processed delivers:</p>
-        <BulletList
-          items={[
-            "Environmental remediation",
-            "Strategic mineral supply",
-            "Verifiable ESG performance"
-          ]}
-        />
-      </section>
+
+      <PositioningSection
+        title="This is not waste management."
+        description="It is permanent environmental risk removal—monetized through critical materials."
+        buttons={[
+          { label: "India Strategy", href: "/india-strategy" },
+          { label: "Partnership Models", href: "/partnerships" }
+        ]}
+        id="esg-close-title"
+      />
     </div>
   );
 }

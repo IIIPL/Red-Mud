@@ -1,66 +1,53 @@
 import type { Metadata } from "next";
+import { Hero } from "@/components/ui/Hero";
+import { Section } from "@/components/ui/Section";
+import { Card } from "@/components/ui/Card";
+import { List } from "@/components/ui/List";
+import { PositioningSection } from "@/components/ui/PositioningSection";
 
 export const metadata: Metadata = {
   title: "India Strategy"
 };
 
-function BulletList({ items }: { items: string[] }) {
-  return (
-    <ul className="home-list">
-      {items.map((item) => (
-        <li key={item}>{item}</li>
-      ))}
-    </ul>
-  );
-}
-
 export default function IndiaStrategyPage() {
   return (
     <div className="home-page india-page">
-      <section className="hero-panel reveal" aria-labelledby="india-hero-title">
-        <div className="hero-copy">
-          <p className="kicker">INDIA STRATEGY &amp; POLICY</p>
-          <h1 id="india-hero-title">
-            Turning India’s Largest Industrial Liability into a Strategic Mineral Advantage
-          </h1>
-          <p>
-            India is the fourth-largest generator of bauxite residue (red mud) globally. What has
-            historically been treated as a waste-management challenge is now emerging as a
-            strategic lever for critical-minerals security, industrial remediation, and Atmanirbhar
-            Bharat.
-          </p>
-          <p>
-            Our approach positions red mud not as an environmental burden, but as a domestically
-            available, surface-stored polymetallic resource—capable of supplying scandium, rare
-            earth elements, titanium, and iron oxides at industrial scale.
-          </p>
-        </div>
-        <figure className="hero-media">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Vedanta_aluminium_smelter%2C_Jharsuguda.jpg"
-            alt="Large-scale Indian industrial metals and minerals infrastructure"
-            loading="eager"
-          />
-        </figure>
-      </section>
+      <Hero
+        kicker="INDIA STRATEGY & POLICY"
+        title="Turning India's Largest Industrial Liability into a Strategic Mineral Advantage"
+        imageSrc="/INDIA STRATEGY & POLICY/HERO SECTION.jpg"
+        imageAlt="India Strategy for Red Mud Processing"
+        id="india-hero-title"
+      >
+        <p>
+          India is the fourth-largest generator of bauxite residue (red mud) globally. What has
+          historically been treated as a waste-management challenge is now emerging as a
+          strategic lever for critical-minerals security, industrial remediation, and Atmanirbhar
+          Bharat.
+        </p>
+        <p>
+          Our approach positions red mud not as an environmental burden, but as a domestically
+          available, surface-stored polymetallic resource—capable of supplying scandium, rare
+          earth elements, titanium, and iron oxides at industrial scale.
+        </p>
+      </Hero>
 
-      <section className="content-section reveal" aria-labelledby="reality-title">
-        <div className="section-heading">
-          <p className="kicker">INDIA’S RED MUD REALITY — SCALE, CONCENTRATION, AND RISK</p>
-          <h2 id="reality-title">Annual Generation &amp; Utilization</h2>
-        </div>
-        <article className="card">
-          <BulletList
+      <Section
+        id="reality-title"
+        kicker="INDIA'S RED MUD REALITY"
+        title="Scale, Concentration, and Risk"
+      >
+        <Card>
+          <List
             items={[
               "~9 million tonnes/year of red mud generated nationally",
               "<3% utilization rate, far below the 25% target articulated by regulators",
               "~8.7 million tonnes/year net accumulation into engineered storage ponds"
             ]}
           />
-        </article>
-        <div className="grid-2">
-          <article className="card">
-            <h3>Geographic Concentration</h3>
+        </Card>
+        <div className="grid-2 mt-6">
+          <Card title="Geographic Concentration">
             <ul className="home-list">
               <li>Odisha contributes ~75–80% of India’s annual red-mud output</li>
               <li>
@@ -74,24 +61,22 @@ export default function IndiaStrategyPage() {
                 </ul>
               </li>
             </ul>
-          </article>
-          <article className="card">
-            <h3>Legacy Stockpiles</h3>
-            <BulletList
+          </Card>
+          <Card title="Legacy Stockpiles">
+            <List
               items={[
                 "Tens of millions of tonnes already stored",
                 "Limited public disclosure of closing stock and pond life",
                 "Aging containment infrastructure elevates environmental, social, and compliance risk"
               ]}
             />
-          </article>
+          </Card>
         </div>
-        <article className="card">
-          <h3>Key Insight:</h3>
+        <Card title="Key Insight:" className="mt-6">
           <p>India’s red-mud challenge is not future-tense.</p>
           <p>It is already accumulated, geographically concentrated, and policy-relevant today.</p>
-        </article>
-        <figure className="card diagram india-map-diagram" aria-label="India priority states and cluster map">
+        </Card>
+        <figure className="card diagram india-map-diagram mt-6" aria-label="India priority states and cluster map">
           <svg viewBox="0 0 920 320" role="img" aria-label="India strategy cluster focus on Odisha, Jharkhand, and Uttar Pradesh">
             <rect x="20" y="20" width="360" height="280" rx="12" />
             <text x="200" y="60" textAnchor="middle">Priority States</text>
@@ -107,15 +92,15 @@ export default function IndiaStrategyPage() {
             <text x="660" y="225" textAnchor="middle">Hindalco Renukoot</text>
           </svg>
         </figure>
-      </section>
+      </Section>
 
-      <section className="content-section reveal" aria-labelledby="potential-title">
-        <div className="section-heading">
-          <p className="kicker">STRATEGIC MINERAL POTENTIAL — HIDING IN PLAIN SIGHT</p>
-          <h2 id="potential-title">Red mud generated from Indian bauxites typically contains:</h2>
-        </div>
-        <article className="card">
-          <BulletList
+      <Section
+        id="potential-title"
+        kicker="STRATEGIC MINERAL POTENTIAL"
+        title="Hiding in Plain Sight"
+      >
+        <Card>
+          <List
             items={[
               "Iron oxides: ~35–45%",
               "Alumina: ~15–20%",
@@ -124,10 +109,10 @@ export default function IndiaStrategyPage() {
               "Scandium: low ppm, but economically significant at scale"
             ]}
           />
-        </article>
-        <article className="card">
+        </Card>
+        <Card className="mt-6">
           <p>At national throughput levels, this translates into:</p>
-          <BulletList
+          <List
             items={[
               "Meaningful scandium recovery potential for aerospace alloys and SOFCs",
               "REE streams relevant to EVs, wind turbines, electronics, and defense",
@@ -135,20 +120,27 @@ export default function IndiaStrategyPage() {
             ]}
           />
           <p>This is a strategic materials opportunity without new mining.</p>
-        </article>
-      </section>
+        </Card>
+        <figure className="image-card image-card-large mt-6">
+          <img
+            src="/INDIA STRATEGY & POLICY/Strategic Mineral Potential.jpg"
+            alt="Strategic Mineral Potential in Red Mud"
+            loading="lazy"
+          />
+        </figure>
+      </Section>
 
-      <section className="content-section reveal" aria-labelledby="policy-title">
-        <div className="section-heading">
-          <p className="kicker">POLICY ALIGNMENT — BUILT FOR INDIA’S NATIONAL MISSIONS</p>
-          <h2 id="policy-title">1. Critical Minerals Security</h2>
-        </div>
-        <article className="card">
+      <Section
+        id="policy-title"
+        kicker="POLICY ALIGNMENT"
+        title="Built for India's National Missions"
+      >
+        <Card>
           <p>
             India has formally recognized rare earths, scandium, and titanium as strategic
             materials essential for:
           </p>
-          <BulletList
+          <List
             items={[
               "Electric mobility",
               "Renewable energy systems",
@@ -160,11 +152,10 @@ export default function IndiaStrategyPage() {
             This technology enables domestic recovery from domestic waste, reducing exposure to
             geopolitically concentrated supply chains.
           </p>
-        </article>
-        <article className="card">
-          <h3>2. Environmental Remediation &amp; CPCB Objectives</h3>
+        </Card>
+        <Card title="2. Environmental Remediation & CPCB Objectives" className="mt-6">
           <p>The Central Pollution Control Board (CPCB) has highlighted:</p>
-          <BulletList
+          <List
             items={[
               "Low utilization rates",
               "Rising cumulative stockpiles",
@@ -172,18 +163,17 @@ export default function IndiaStrategyPage() {
             ]}
           />
           <p>Alignment:</p>
-          <BulletList
+          <List
             items={[
               "Permanent reduction of legacy ponds",
               "No creation of secondary waste",
               "Conversion of regulatory liability into managed industrial output"
             ]}
           />
-        </article>
-        <article className="card">
-          <h3>3. Circular Economy &amp; Atmanirbhar Bharat</h3>
+        </Card>
+        <Card title="3. Circular Economy & Atmanirbhar Bharat" className="mt-6">
           <p>India’s industrial policy emphasizes:</p>
-          <BulletList
+          <List
             items={[
               "Circular use of materials",
               "Import substitution",
@@ -191,39 +181,52 @@ export default function IndiaStrategyPage() {
             ]}
           />
           <p>Alignment:</p>
-          <BulletList
+          <List
             items={[
               "Red mud becomes a secondary mineral resource",
               "Multi-output recovery improves economic resilience",
               "Supports indigenous alloy, battery, and clean-energy supply chains"
             ]}
           />
-        </article>
-        <article className="card">
-          <h3>4. ESG, Land Use &amp; Social License</h3>
-          <BulletList
+        </Card>
+        <Card title="4. ESG, Land Use & Social License" className="mt-6">
+          <List
             items={[
               "Red mud ponds occupy scarce industrial land",
               "Long-term storage imposes intergenerational risk"
             ]}
           />
           <p>Alignment:</p>
-          <BulletList
+          <List
             items={[
               "Shrinks waste-storage footprint",
               "Reduces long-term environmental liabilities",
               "Strengthens community and regulatory confidence"
             ]}
           />
-        </article>
-      </section>
+        </Card>
+        <figure className="image-card image-card-tall mt-6">
+          <img
+            src="/INDIA STRATEGY & POLICY/Policy Alignment.webp"
+            alt="Policy Alignment Framework"
+            loading="lazy"
+          />
+        </figure>
+        <figure className="image-card image-card-tall mt-6">
+          <img
+            src="/INDIA STRATEGY & POLICY/Circular Economy.png"
+            alt="Circular Economy Model"
+            loading="lazy"
+          />
+        </figure>
+      </Section>
 
-      <section className="content-section reveal" aria-labelledby="deployment-title">
-        <div className="section-heading">
-          <p className="kicker">DEPLOYMENT STRATEGY FOR INDIA</p>
-          <h2 id="deployment-title">Target Integration Model</h2>
-        </div>
-        <article className="card">
+      <Section
+        id="deployment-title"
+        kicker="DEPLOYMENT STRATEGY FOR INDIA"
+        title="Target Integration Model"
+      >
+        <Card>
           <ul className="home-list">
             <li>On-site or adjacent to existing alumina refineries</li>
             <li>
@@ -235,32 +238,36 @@ export default function IndiaStrategyPage() {
               </ul>
             </li>
           </ul>
-        </article>
-        <div className="grid-2">
-          <article className="card">
-            <h3>Modular Scale-Up</h3>
-            <BulletList
+        </Card>
+        <div className="grid-2 mt-6">
+          <Card title="Modular Scale-Up">
+            <List
               items={[
                 "Initial modules aligned to 350,000 t/year processing blocks",
                 "Phased expansion to 1+ million t/year facilities"
               ]}
             />
-          </article>
-          <article className="card">
-            <h3>Priority States</h3>
-            <BulletList items={["Odisha", "Jharkhand", "Uttar Pradesh"]} />
-          </article>
+          </Card>
+          <Card title="Priority States">
+            <List items={["Odisha", "Jharkhand", "Uttar Pradesh"]} />
+          </Card>
         </div>
-      </section>
+        <figure className="image-card image-card-large mt-6">
+          <img
+            src="/INDIA STRATEGY & POLICY/Deployment Strategy for India.jpg"
+            alt="Deployment Strategy for India"
+            loading="lazy"
+          />
+        </figure>
+      </Section>
 
-      <section className="content-section reveal" aria-labelledby="institutions-title">
-        <div className="section-heading">
-          <p className="kicker">ROLE OF GOVERNMENT &amp; INSTITUTIONS</p>
-          <h2 id="institutions-title">This platform is designed to work with public policy.</h2>
-        </div>
-        <article className="card">
-          <h3>Potential Engagement Pathways</h3>
-          <BulletList
+      <Section
+        id="institutions-title"
+        kicker="ROLE OF GOVERNMENT & INSTITUTIONS"
+        title="This platform is designed to work with public policy."
+      >
+        <Card title="Potential Engagement Pathways">
+          <List
             items={[
               "Public-Private Partnerships with PSUs",
               "Viability-gap or remediation-linked incentives",
@@ -268,24 +275,33 @@ export default function IndiaStrategyPage() {
               "Multilateral climate and circular-economy financing"
             ]}
           />
-        </article>
-        <article className="card">
-          <h3>Why This Matters</h3>
+        </Card>
+        <Card title="Why This Matters" className="mt-6">
           <p>India does not need to choose between:</p>
           <p>Environmental remediation</p>
           <p>or</p>
           <p>Strategic mineral independence</p>
           <p>This technology delivers both simultaneously.</p>
-        </article>
-      </section>
+        </Card>
+        <figure className="image-card image-card-large mt-6">
+          <img
+            src="/INDIA STRATEGY & POLICY/Role of Government & Institutions.jpg"
+            alt="Role of Government and Institutions"
+            loading="lazy"
+          />
+        </figure>
+      </Section>
 
-      <section className="positioning-section reveal" aria-labelledby="india-close-title">
-        <p className="kicker">STRATEGIC POSITIONING (Page Close)</p>
-        <h2 id="india-close-title">India already owns one of the world’s largest critical-minerals resources.</h2>
-        <p>It is stored as red mud.</p>
-        <p>The question is no longer whether to remediate it—</p>
-        <p>but whether to do so in a way that strengthens national capability.</p>
-      </section>
+
+      <PositioningSection
+        title="India already owns one of the world's largest critical-minerals resources."
+        description="It is stored as red mud. The question is no longer whether to remediate it—but whether to do so in a way that strengthens national capability."
+        buttons={[
+          { label: "Technology Details", href: "/technology" },
+          { label: "Partnership Models", href: "/partnerships" }
+        ]}
+        id="india-close-title"
+      />
     </div>
   );
 }

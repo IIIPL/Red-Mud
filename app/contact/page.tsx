@@ -1,18 +1,13 @@
 import type { Metadata } from "next";
+import { Hero } from "@/components/ui/Hero";
+import { Section } from "@/components/ui/Section";
+import { Card } from "@/components/ui/Card";
+import { List } from "@/components/ui/List";
+import { PositioningSection } from "@/components/ui/PositioningSection";
 
 export const metadata: Metadata = {
   title: "Contact"
 };
-
-function BulletList({ items }: { items: string[] }) {
-  return (
-    <ul className="home-list">
-      {items.map((item) => (
-        <li key={item}>{item}</li>
-      ))}
-    </ul>
-  );
-}
 
 type ContactPageProps = {
   searchParams?: {
@@ -27,60 +22,51 @@ export default function ContactPage({ searchParams }: ContactPageProps) {
 
   return (
     <div className="home-page contact-page">
-      <section className="hero-panel reveal" aria-labelledby="contact-hero-title">
-        <div className="hero-copy">
-          <p className="kicker">CONTACT &amp; PROJECT INTAKE</p>
-          <h1 id="contact-hero-title">Initiating Technical &amp; Commercial Engagement</h1>
-          <p>
-            We engage selectively with alumina producers, government institutions, and strategic
-            investors where there is a clear mandate for remediation, critical-mineral recovery,
-            or long-term infrastructure deployment.
-          </p>
-          <p>
-            This intake process is structured to ensure technical relevance, confidentiality, and
-            efficient use of time for all parties.
-          </p>
-        </div>
-        <figure className="hero-media">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/4/40/Alumina_refinery_pinjarra.jpg"
-            alt="Industrial refinery infrastructure for technical and commercial project intake"
-            loading="eager"
-          />
-        </figure>
-      </section>
+      <Hero
+        kicker="CONTACT & PROJECT INTAKE"
+        title="Initiating Technical & Commercial Engagement"
+        imageSrc="/CONTACT/CONTACT.webp"
+        imageAlt="Contact and Project Intake"
+        id="contact-hero-title"
+      >
+        <p>
+          We engage selectively with alumina producers, government institutions, and strategic
+          investors where there is a clear mandate for remediation, critical-mineral recovery,
+          or long-term infrastructure deployment.
+        </p>
+        <p>
+          This intake process is structured to ensure technical relevance, confidentiality, and
+          efficient use of time for all parties.
+        </p>
+      </Hero>
 
-      <section className="content-section reveal" aria-labelledby="framing-title">
-        <div className="section-heading">
-          <p className="kicker">ENGAGEMENT FRAMING</p>
-          <h2 id="framing-title">Institutional Intake Framework</h2>
-        </div>
+      <Section
+        id="framing-title"
+        kicker="ENGAGEMENT FRAMING"
+        title="Institutional Intake Framework"
+      >
         {submitted ? (
-          <article className="card intake-status success" role="status" aria-live="polite">
-            <h3>Submission received</h3>
+          <Card className="intake-status success mb-6" title="Submission received">
             <p>Your intake request has been recorded for structured review.</p>
-          </article>
+          </Card>
         ) : null}
         {hasError ? (
-          <article className="card intake-status error" role="alert">
-            <h3>Submission incomplete</h3>
+          <Card className="intake-status error mb-6" title="Submission incomplete">
             <p>Please complete all required fields and submit again.</p>
-          </article>
+          </Card>
         ) : null}
-        <article className="card">
-          <h3>STEP 1 — IDENTIFY YOUR ORGANIZATION TYPE</h3>
+        <Card title="STEP 1 — IDENTIFY YOUR ORGANIZATION TYPE">
           <p>
             Please select the category that best describes your organization.
             This allows us to route your inquiry to the appropriate technical and commercial team.
           </p>
-        </article>
+        </Card>
 
-        <div className="grid-3">
-          <article className="card">
-            <h3>A. Alumina Producers &amp; Refinery Operators</h3>
-            <p>Primary focus: remediation, compliance, and asset-adjacent deployment</p>
-            <p>Typical objectives</p>
-            <BulletList
+        <div className="grid-3 mt-6">
+          <Card title="A. Alumina Producers & Refinery Operators">
+            <p className="font-semibold text-sm mb-2">Primary focus: remediation, compliance, and asset-adjacent deployment</p>
+            <p className="font-semibold text-sm mb-2">Typical objectives</p>
+            <List
               items={[
                 "Reduction of red-mud stockpiles",
                 "Long-term residue liability management",
@@ -88,8 +74,8 @@ export default function ContactPage({ searchParams }: ContactPageProps) {
                 "ESG and regulatory alignment"
               ]}
             />
-            <p>Information requested</p>
-            <BulletList
+            <p className="font-semibold text-sm mt-4 mb-2">Information requested</p>
+            <List
               items={[
                 "Refinery location(s)",
                 "Approximate annual red-mud generation",
@@ -97,12 +83,11 @@ export default function ContactPage({ searchParams }: ContactPageProps) {
                 "Preferred engagement model (JV / Licensing / BOO)"
               ]}
             />
-          </article>
-          <article className="card">
-            <h3>B. Government &amp; Public-Sector Institutions</h3>
-            <p>Primary focus: policy execution, remediation mandates, and national capability</p>
-            <p>Typical objectives</p>
-            <BulletList
+          </Card>
+          <Card title="B. Government & Public-Sector Institutions">
+            <p className="font-semibold text-sm mb-2">Primary focus: policy execution, remediation mandates, and national capability</p>
+            <p className="font-semibold text-sm mb-2">Typical objectives</p>
+            <List
               items={[
                 "Critical-minerals security",
                 "Industrial waste remediation programs",
@@ -110,8 +95,8 @@ export default function ContactPage({ searchParams }: ContactPageProps) {
                 "Regional or national deployment frameworks"
               ]}
             />
-            <p>Information requested</p>
-            <BulletList
+            <p className="font-semibold text-sm mt-4 mb-2">Information requested</p>
+            <List
               items={[
                 "Jurisdiction / ministry / agency",
                 "Policy or program context",
@@ -119,12 +104,11 @@ export default function ContactPage({ searchParams }: ContactPageProps) {
                 "Intended role (regulatory, facilitation, co-investment)"
               ]}
             />
-          </article>
-          <article className="card">
-            <h3>C. Strategic &amp; Institutional Investors</h3>
-            <p>Primary focus: infrastructure, critical materials, and long-duration assets</p>
-            <p>Typical objectives</p>
-            <BulletList
+          </Card>
+          <Card title="C. Strategic & Institutional Investors">
+            <p className="font-semibold text-sm mb-2">Primary focus: infrastructure, critical materials, and long-duration assets</p>
+            <p className="font-semibold text-sm mb-2">Typical objectives</p>
+            <List
               items={[
                 "Equity or project-level investment",
                 "Technology-backed infrastructure exposure",
@@ -132,8 +116,8 @@ export default function ContactPage({ searchParams }: ContactPageProps) {
                 "Strategic mineral supply participation"
               ]}
             />
-            <p>Information requested</p>
-            <BulletList
+            <p className="font-semibold text-sm mt-4 mb-2">Information requested</p>
+            <List
               items={[
                 "Investor type (PE, infra fund, sovereign, family office, strategic)",
                 "Target geography",
@@ -141,30 +125,37 @@ export default function ContactPage({ searchParams }: ContactPageProps) {
                 "Ticket size range (optional)"
               ]}
             />
-          </article>
+          </Card>
         </div>
-      </section>
+        <figure className="image-card image-card-large mt-6">
+          <img
+            src="/CONTACT/CONTACT2.webp"
+            alt="Organization Types and Engagement Framework"
+            loading="lazy"
+          />
+        </figure>
+      </Section>
 
-      <section className="content-section reveal" aria-labelledby="intake-form-title">
-        <div className="section-heading">
-          <p className="kicker">STEP 2 — PROJECT CONTEXT &amp; ENGAGEMENT REQUEST</p>
-          <h2 id="intake-form-title">This step helps determine technical readiness and next actions.</h2>
-        </div>
+      <Section
+        id="intake-form-title"
+        kicker="STEP 2 — PROJECT CONTEXT & ENGAGEMENT REQUEST"
+        title="This step helps determine technical readiness and next actions."
+      >
         <form className="card intake-form" method="post" action="/api/intake">
           <fieldset>
             <legend>Organization category (required)</legend>
             <div className="radio-grid">
               <label>
                 <input type="radio" name="organizationType" value="Alumina Producers & Refinery Operators" required />
-                Alumina Producers &amp; Refinery Operators
+                Alumina Producers & Refinery Operators
               </label>
               <label>
                 <input type="radio" name="organizationType" value="Government & Public-Sector Institutions" required />
-                Government &amp; Public-Sector Institutions
+                Government & Public-Sector Institutions
               </label>
               <label>
                 <input type="radio" name="organizationType" value="Strategic & Institutional Investors" required />
-                Strategic &amp; Institutional Investors
+                Strategic & Institutional Investors
               </label>
             </div>
           </fieldset>
@@ -215,25 +206,30 @@ export default function ContactPage({ searchParams }: ContactPageProps) {
           </p>
           <button type="submit">Submit project intake</button>
         </form>
-      </section>
+        <figure className="image-card image-card-large mt-6">
+          <img
+            src="/CONTACT/CONTACT3.webp"
+            alt="Project Intake Form"
+            loading="lazy"
+          />
+        </figure>
+      </Section>
 
-      <section className="content-section reveal" aria-labelledby="next-title">
-        <div className="section-heading">
-          <p className="kicker">WHAT HAPPENS NEXT</p>
-          <h2 id="next-title">A Structured Engagement Pathway</h2>
-        </div>
+      <Section
+        id="next-title"
+        kicker="WHAT HAPPENS NEXT"
+        title="A Structured Engagement Pathway"
+      >
         <div className="grid-2">
-          <article className="card">
-            <h3>1. Initial Review (7–10 days)</h3>
+          <Card title="1. Initial Review (7–10 days)">
             <p>
               Submissions are reviewed by technical and commercial leads to confirm relevance,
               feasibility, and alignment.
             </p>
-          </article>
-          <article className="card">
-            <h3>2. Confidential Technical Briefing</h3>
+          </Card>
+          <Card title="2. Confidential Technical Briefing">
             <p>Qualified parties are invited to a structured technical session covering:</p>
-            <BulletList
+            <List
               items={[
                 "Process architecture",
                 "Deployment models",
@@ -241,85 +237,83 @@ export default function ContactPage({ searchParams }: ContactPageProps) {
                 "ESG and regulatory interface"
               ]}
             />
-          </article>
+          </Card>
         </div>
-        <div className="grid-2">
-          <article className="card">
-            <h3>3. Site &amp; Data Assessment</h3>
+        <div className="grid-2 mt-6">
+          <Card title="3. Site & Data Assessment">
             <p>Where appropriate:</p>
-            <BulletList
+            <List
               items={[
                 "Feedstock sampling and characterization",
                 "Stockpile and logistics evaluation",
                 "Integration and footprint assessment"
               ]}
             />
-          </article>
-          <article className="card">
-            <h3>4. Commercial Structuring Discussion</h3>
+          </Card>
+          <Card title="4. Commercial Structuring Discussion">
             <p>Definition of:</p>
-            <BulletList
+            <List
               items={[
                 "JV, Licensing, or BOO framework",
                 "Roles, responsibilities, and timelines",
                 "Indicative economics and governance"
               ]}
             />
-          </article>
+          </Card>
         </div>
-        <article className="card">
-          <h3>5. Formal Engagement</h3>
+        <Card title="5. Formal Engagement" className="mt-6">
           <p>
             Execution of NDAs, term sheets, and project-specific workplans leading toward
             deployment or investment.
           </p>
-        </article>
-      </section>
+        </Card>
+        <figure className="image-card image-card-large mt-6">
+          <img
+            src="/CONTACT/WHAT HAPPENS NEXT.jpg"
+            alt="Structured Engagement Pathway"
+            loading="lazy"
+          />
+        </figure>
+      </Section>
 
-      <section className="content-section reveal" aria-labelledby="expectation-title">
-        <div className="section-heading">
-          <p className="kicker">EXPECTATION SETTING</p>
-          <h2 id="expectation-title">To ensure productive engagement:</h2>
-        </div>
-        <article className="card">
-          <BulletList
+      <Section
+        id="expectation-title"
+        kicker="EXPECTATION SETTING"
+        title="To ensure productive engagement:"
+      >
+        <Card>
+          <List
             items={[
               "No unsolicited financial models or technical documentation",
               "Technology access follows structured diligence",
               "Priority given to projects with defined sites, mandates, or capital pathways"
             ]}
           />
-        </article>
-      </section>
+        </Card>
+      </Section>
 
-      <section className="content-section reveal" aria-labelledby="governance-title">
-        <div className="section-heading">
-          <p className="kicker">CONFIDENTIALITY &amp; GOVERNANCE</p>
-          <h2 id="governance-title">All qualified engagements proceed under:</h2>
-        </div>
-        <article className="card">
-          <BulletList
+      <Section
+        id="governance-title"
+        kicker="CONFIDENTIALITY & GOVERNANCE"
+        title="All qualified engagements proceed under:"
+      >
+        <Card>
+          <List
             items={[
               "Mutual non-disclosure agreements",
               "Controlled information release",
               "Clear separation between technical review and commercial negotiation"
             ]}
           />
-        </article>
-      </section>
+        </Card>
+      </Section>
 
-      <section className="positioning-section reveal" aria-labelledby="contact-close-title">
-        <p className="kicker">PAGE CLOSE (POSITIONING)</p>
-        <h2 id="contact-close-title">This is not a contact form.</h2>
-        <p>
-          It is the first step in deploying industrial-scale remediation and critical-minerals
-          infrastructure.
-        </p>
-        <p>
-          If you are prepared for a structured, technically grounded engagement, begin the
-          process.
-        </p>
-      </section>
+
+      <PositioningSection
+        title="This is not a contact form."
+        description="It is the first step in deploying industrial-scale remediation and critical-minerals infrastructure. If you are prepared for a structured, technically grounded engagement, begin the process."
+        id="contact-close-title"
+      />
     </div>
   );
 }

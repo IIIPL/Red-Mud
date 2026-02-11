@@ -1,54 +1,41 @@
 import type { Metadata } from "next";
+import { Hero } from "@/components/ui/Hero";
+import { Section } from "@/components/ui/Section";
+import { Card } from "@/components/ui/Card";
+import { List } from "@/components/ui/List";
+import { PositioningSection } from "@/components/ui/PositioningSection";
 
 export const metadata: Metadata = {
   title: "Technology"
 };
 
-function BulletList({ items }: { items: string[] }) {
-  return (
-    <ul className="home-list">
-      {items.map((item) => (
-        <li key={item}>{item}</li>
-      ))}
-    </ul>
-  );
-}
-
 export default function TechnologyPage() {
   return (
     <div className="home-page technology-page">
-      <section className="hero-panel reveal" aria-labelledby="technology-hero-title">
-        <div className="hero-copy">
-          <p className="kicker">TECHNOLOGY &amp; PROCESS</p>
-          <h1 id="technology-hero-title">
-            A Modular, Zero-Waste Platform for Critical Minerals Recovery from Red Mud
-          </h1>
-          <p className="lead">
-            Our technology is a patented, low-temperature hydrometallurgical platform engineered
-            specifically for bauxite residue. Unlike laboratory-scale or single-element
-            approaches, the system is designed for continuous industrial operation, capable of
-            processing both legacy stockpiles and live refinery residue streams.
-          </p>
-          <p>
-            At its core is a four-stage proprietary extraction architecture that enables selective
-            recovery of high-value elements while converting the remaining matrix into stable,
-            reusable industrial materials.
-          </p>
-        </div>
-        <figure className="hero-media">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/4/40/Alumina_refinery_pinjarra.jpg"
-            alt="Alumina refinery process infrastructure"
-            loading="eager"
-          />
-        </figure>
-      </section>
+      <Hero
+        kicker="TECHNOLOGY"
+        title="Turning an Industrial Liability into a Strategic Mineral Asset"
+        imageSrc="/TECHNOLOGY/hero.jpg"
+        imageAlt="Red Mud Processing Technology"
+        id="technology-hero-title"
+      >
+        <p>
+          Red mud—bauxite residue from alumina refining—is one of the largest unmanaged
+          industrial waste streams globally. Our platform converts this long-term environmental
+          liability into a domestic source of critical minerals, including Scandium and Rare Earth
+          Elements (REEs), while permanently reducing legacy stockpiles.
+        </p>
+        <p>
+          This is not theoretical extraction. It is a commercially proven, modular platform
+          engineered for deployment at existing refineries and legacy pond sites.
+        </p>
+      </Hero>
 
-      <section className="content-section reveal" aria-labelledby="process-overview-title">
-        <div className="section-heading">
-          <p className="kicker">PROCESS OVERVIEW</p>
-          <h2 id="process-overview-title">Four Stages. One Integrated System. No Residual Waste.</h2>
-        </div>
+      <Section
+        id="process-overview-title"
+        kicker="PROCESS OVERVIEW"
+        title="Four Stages. One Integrated System. No Residual Waste."
+      >
         <figure className="card diagram technology-diagram" aria-label="Four-stage process overview">
           <svg viewBox="0 0 1200 220" role="img" aria-label="Stage 1 to Stage 4 integrated process flow">
             <rect x="20" y="50" width="260" height="120" rx="12" />
@@ -68,28 +55,26 @@ export default function TechnologyPage() {
             <path d="M880 110H920" />
           </svg>
         </figure>
-      </section>
+      </Section>
 
-      <section className="content-section reveal" aria-labelledby="stage-1-title">
-        <div className="section-heading">
-          <p className="kicker">STAGE 1 — FEEDSTOCK CONDITIONING &amp; MATRIX STABILIZATION</p>
-          <h2 id="stage-1-title">Objective:</h2>
-        </div>
+      <Section
+        id="stage-1-title"
+        kicker="STAGE 1 — FEEDSTOCK CONDITIONING & MATRIX STABILIZATION"
+        title="Objective:"
+      >
         <p>Prepare highly alkaline, mineral-complex red mud for controlled, selective extraction.</p>
-        <article className="card">
-          <h3>What Happens</h3>
-          <BulletList
+        <Card title="What Happens">
+          <List
             items={[
               "Red mud is mechanically homogenized and conditioned",
               "Particle dispersion and surface activation improve downstream selectivity",
               "Residual alkalinity is stabilized to enable controlled chemical interaction"
             ]}
           />
-        </article>
-        <article className="card">
-          <h3>Why This Matters</h3>
+        </Card>
+        <Card title="Why This Matters" className="mt-6">
           <p>Red mud is not a uniform material. Its composition varies by:</p>
-          <BulletList
+          <List
             items={[
               "Bauxite source",
               "Bayer process parameters",
@@ -101,10 +86,9 @@ export default function TechnologyPage() {
             same plant design to operate on Indian, Australian, Middle Eastern, or North American
             residues without fundamental redesign.
           </p>
-        </article>
-        <article className="card">
-          <h3>Key Characteristics</h3>
-          <BulletList
+        </Card>
+        <Card title="Key Characteristics" className="mt-6">
+          <List
             items={[
               "No thermal treatment",
               "No sintering or roasting",
@@ -112,30 +96,35 @@ export default function TechnologyPage() {
               "Closed-loop reagent management"
             ]}
           />
-        </article>
-      </section>
+        </Card>
+        <figure className="image-card image-card-tall mt-6">
+          <img
+            src="/TECHNOLOGY/STAGE 1.avif"
+            alt="Stage 1 - Feedstock Conditioning Process"
+            loading="lazy"
+          />
+        </figure>
+      </Section>
 
-      <section className="content-section reveal" aria-labelledby="stage-2-title">
-        <div className="section-heading">
-          <p className="kicker">STAGE 2 — SELECTIVE DISSOLUTION &amp; TARGETED LEACHING</p>
-          <h2 id="stage-2-title">Objective:</h2>
-        </div>
+      <Section
+        id="stage-2-title"
+        kicker="STAGE 2 — SELECTIVE DISSOLUTION & TARGETED LEACHING"
+        title="Objective:"
+      >
         <p>Mobilize critical and strategic elements without dissolving the full bulk matrix.</p>
         <div className="grid-2">
-          <article className="card">
-            <h3>What Happens</h3>
-            <BulletList
+          <Card title="What Happens">
+            <List
               items={[
                 "Proprietary leaching chemistry selectively dissolves target metals",
                 "Rare earth elements, scandium, titanium-bearing phases, and iron compounds are mobilized in controlled fractions",
                 "Non-target silicate and aluminosilicate phases remain largely inert"
               ]}
             />
-          </article>
-          <article className="card">
-            <h3>Why This Matters</h3>
+          </Card>
+          <Card title="Why This Matters">
             <p>Conventional approaches attempt bulk dissolution, driving:</p>
-            <BulletList
+            <List
               items={[
                 "High reagent consumption",
                 "Complex downstream separation",
@@ -143,18 +132,17 @@ export default function TechnologyPage() {
               ]}
             />
             <p>This stage is element-selective by design, enabling:</p>
-            <BulletList
+            <List
               items={[
                 "Multi-element recovery from a single feed",
                 "Lower operating costs",
                 "Reduced secondary waste streams"
               ]}
             />
-          </article>
+          </Card>
         </div>
-        <article className="card">
-          <h3>Operating Profile</h3>
-          <BulletList
+        <Card title="Operating Profile" className="mt-6">
+          <List
             items={[
               "<100 °C",
               "Atmospheric pressure",
@@ -162,32 +150,37 @@ export default function TechnologyPage() {
               "Continuous-flow reactors (not batch tanks)"
             ]}
           />
-        </article>
-      </section>
+        </Card>
+        <figure className="image-card image-card-large mt-6">
+          <img
+            src="/TECHNOLOGY/108233019-1764243888072-gettyimages-2235868370-ESTONIA-NARVA-RARE-EARTH-PLANT-OPEN.jpeg"
+            alt="Stage 2 - Rare Earth Processing Facility"
+            loading="lazy"
+          />
+        </figure>
+      </Section>
 
-      <section className="content-section reveal" aria-labelledby="stage-3-title">
-        <div className="section-heading">
-          <p className="kicker">STAGE 3 — FRACTIONATED SEPARATION &amp; METAL RECOVERY</p>
-          <h2 id="stage-3-title">Objective:</h2>
-        </div>
+      <Section
+        id="stage-3-title"
+        kicker="STAGE 3 — FRACTIONATED SEPARATION & METAL RECOVERY"
+        title="Objective:"
+      >
         <p>
           Individually recover high-purity mineral streams suitable for downstream refining or
           direct industrial use.
         </p>
         <div className="grid-2">
-          <article className="card">
-            <h3>What Happens</h3>
-            <BulletList
+          <Card title="What Happens">
+            <List
               items={[
                 "Dissolved metals are separated via staged precipitation, ion-exchange, and controlled crystallization",
                 "Each element group is recovered as a distinct product stream, not a mixed concentrate",
                 "Recovery sequencing is optimized based on feed chemistry and market priorities"
               ]}
             />
-          </article>
-          <article className="card">
-            <h3>Recovered Outputs Include</h3>
-            <BulletList
+          </Card>
+          <Card title="Recovered Outputs Include">
+            <List
               items={[
                 "Scandium compounds",
                 "Rare Earth Element fractions (yttrium, dysprosium, gadolinium, others)",
@@ -195,43 +188,40 @@ export default function TechnologyPage() {
                 "Titanium-bearing intermediates"
               ]}
             />
-          </article>
+          </Card>
         </div>
-        <article className="card">
-          <h3>Why This Matters</h3>
+        <Card title="Why This Matters" className="mt-6">
           <p>
             Producing separate, specification-grade outputs avoids the need for third-party
             cracking or offshore refining—critical for supply-chain security and value capture.
           </p>
-        </article>
-        <figure className="inline-media card">
+        </Card>
+        <figure className="image-card image-card-full mt-6">
           <img
-            src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Laboratory_reactors.jpg"
-            alt="Industrial reactor and separation equipment"
+            src="/TECHNOLOGY/Strategic Materials Recovered from Red Mud.webp"
+            alt="Strategic Materials Recovered from Red Mud"
             loading="lazy"
           />
         </figure>
-      </section>
+      </Section>
 
-      <section className="content-section reveal" aria-labelledby="stage-4-title">
-        <div className="section-heading">
-          <p className="kicker">STAGE 4 — RESIDUAL MATRIX CONVERSION &amp; ZERO-WASTE FINISHING</p>
-          <h2 id="stage-4-title">Objective:</h2>
-        </div>
+      <Section
+        id="stage-4-title"
+        kicker="STAGE 4 — RESIDUAL MATRIX CONVERSION & ZERO-WASTE FINISHING"
+        title="Objective:"
+      >
         <p>Eliminate tailings and convert all remaining solids into stable, usable materials.</p>
-        <article className="card">
-          <h3>What Happens</h3>
-          <BulletList
+        <Card title="What Happens">
+          <List
             items={[
               "Remaining solids are neutralized and mineralogically stabilized",
               "Converted into aluminosilicate materials, calcium carbonate derivatives, and inert construction-grade products",
               "Process water and reagents are recovered and recycled internally"
             ]}
           />
-        </article>
-        <article className="card">
-          <h3>Result</h3>
-          <BulletList
+        </Card>
+        <Card title="Result" className="mt-6">
+          <List
             items={[
               "No new waste stream",
               "No material returned to ponds",
@@ -240,28 +230,42 @@ export default function TechnologyPage() {
           />
           <p>This is not waste minimization.</p>
           <p>It is full material conversion.</p>
-        </article>
-      </section>
-
-      <section className="content-section reveal" aria-labelledby="zero-waste-title">
-        <div className="section-heading">
-          <p className="kicker">ZERO-WASTE MODULAR PLANT DESIGN</p>
-          <h2 id="zero-waste-title">Engineered for Deployment, Not Experimentation</h2>
+        </Card>
+        <div className="grid-2 mt-6">
+          <figure className="image-card image-card-tall">
+            <img
+              src="/TECHNOLOGY/WATER RECOVERY & CLOSED-LOOP OPERATION.png"
+              alt="Water Recovery and Closed-Loop Operation"
+              loading="lazy"
+            />
+          </figure>
+          <figure className="image-card image-card-tall">
+            <img
+              src="/TECHNOLOGY/Reverse Osmosis with Closed-Circuit Desalination for High Recovery in Commercial RO Plants.webp"
+              alt="Reverse Osmosis Closed-Circuit Desalination"
+              loading="lazy"
+            />
+          </figure>
         </div>
+      </Section>
+
+      <Section
+        id="zero-waste-title"
+        kicker="ZERO-WASTE MODULAR PLANT DESIGN"
+        title="Engineered for Deployment, Not Experimentation"
+      >
         <div className="grid-3">
-          <article className="card">
-            <h3>Modular Architecture</h3>
-            <BulletList
+          <Card title="Modular Architecture">
+            <List
               items={[
                 "Standardized processing blocks",
                 "Typical module: ~350,000 tonnes per year",
                 "Linear scale-up to 1+ million tonnes per year"
               ]}
             />
-          </article>
-          <article className="card">
-            <h3>Environmental Profile</h3>
-            <BulletList
+          </Card>
+          <Card title="Environmental Profile">
+            <List
               items={[
                 "Low-temperature operation",
                 "No combustion steps",
@@ -270,10 +274,9 @@ export default function TechnologyPage() {
                 "Minimal incremental power demand"
               ]}
             />
-          </article>
-          <article className="card">
-            <h3>Operational Advantages</h3>
-            <BulletList
+          </Card>
+          <Card title="Operational Advantages">
+            <List
               items={[
                 "Faster permitting versus mining or smelting",
                 "Predictable capex per module",
@@ -281,18 +284,24 @@ export default function TechnologyPage() {
                 "Compatible with existing refinery utilities"
               ]}
             />
-          </article>
+          </Card>
         </div>
-      </section>
+        <figure className="image-card image-card-large mt-6">
+          <img
+            src="/TECHNOLOGY/Modular-construction-on-chemical-process-system.jpg"
+            alt="Modular Construction on Chemical Process System"
+            loading="lazy"
+          />
+        </figure>
+      </Section>
 
-      <section className="content-section reveal" aria-labelledby="integration-title">
-        <div className="section-heading">
-          <p className="kicker">PLUG-AND-PLAY INTEGRATION FOR ALUMINA PRODUCERS</p>
-          <h2 id="integration-title">Designed to Sit Beside Refineries — Not Disrupt Them</h2>
-        </div>
+      <Section
+        id="integration-title"
+        kicker="PLUG-AND-PLAY INTEGRATION FOR ALUMINA PRODUCERS"
+        title="Designed to Sit Beside Refineries — Not Disrupt Them"
+      >
         <div className="grid-2">
-          <article className="card">
-            <h3>Integration Model</h3>
+          <Card title="Integration Model">
             <ul className="home-list">
               <li>Installed adjacent to existing residue handling or storage areas</li>
               <li>
@@ -304,10 +313,9 @@ export default function TechnologyPage() {
                 </ul>
               </li>
             </ul>
-          </article>
-          <article className="card">
-            <h3>What the Refinery Does Not Need to Change</h3>
-            <BulletList
+          </Card>
+          <Card title="What the Refinery Does Not Need to Change">
+            <List
               items={[
                 "Bayer digestion process",
                 "Alumina precipitation",
@@ -315,12 +323,11 @@ export default function TechnologyPage() {
                 "Existing residue generation systems"
               ]}
             />
-          </article>
+          </Card>
         </div>
-        <div className="grid-2">
-          <article className="card">
-            <h3>What the Refinery Gains</h3>
-            <BulletList
+        <div className="grid-2 mt-6">
+          <Card title="What the Refinery Gains">
+            <List
               items={[
                 "Permanent reduction of red-mud inventory",
                 "Monetization of a legacy liability",
@@ -328,27 +335,26 @@ export default function TechnologyPage() {
                 "Participation in critical-minerals value chains"
               ]}
             />
-          </article>
-          <article className="card">
-            <h3>Typical Integration Footprint</h3>
-            <BulletList
+          </Card>
+          <Card title="Typical Integration Footprint">
+            <List
               items={[
                 "Modular, brownfield-compatible",
                 "No interference with core refinery operations",
                 "EPC-friendly layouts with phased commissioning"
               ]}
             />
-          </article>
+          </Card>
         </div>
-      </section>
+      </Section>
 
-      <section className="content-section reveal" aria-labelledby="scales-title">
-        <div className="section-heading">
-          <p className="kicker">WHY THIS TECHNOLOGY SCALES</p>
-          <h2 id="scales-title">Key Differentiators</h2>
-        </div>
-        <article className="card">
-          <BulletList
+      <Section
+        id="scales-title"
+        kicker="WHY THIS TECHNOLOGY SCALES"
+        title="Key Differentiators"
+      >
+        <Card>
+          <List
             items={[
               "Granted patent protection covering process architecture",
               "Proven continuous operation at calibration scale",
@@ -361,17 +367,19 @@ export default function TechnologyPage() {
             This platform was built for industrial deployment under real-world constraints—not
             laboratory optimization.
           </p>
-        </article>
-      </section>
+        </Card>
+      </Section>
 
-      <section className="positioning-section reveal" aria-labelledby="technical-close-title">
-        <p className="kicker">POSITIONING STATEMENT (Technical Close)</p>
-        <h2 id="technical-close-title">This is not a waste-treatment system.</h2>
-        <p>
-          It is a critical-minerals recovery platform engineered for scale, security, and
-          permanence.
-        </p>
-      </section>
+
+      <PositioningSection
+        title="This is not a waste-treatment system."
+        description="It is a critical-minerals recovery platform engineered for scale, security, and permanence."
+        buttons={[
+          { label: "View Outputs", href: "/outputs" },
+          { label: "Partnership Models", href: "/partnerships" }
+        ]}
+        id="technical-close-title"
+      />
     </div>
   );
 }
