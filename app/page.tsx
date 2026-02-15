@@ -4,6 +4,7 @@ import { Section } from "@/components/ui/Section";
 import { Card } from "@/components/ui/Card";
 import { List } from "@/components/ui/List";
 import { PositioningSection } from "@/components/ui/PositioningSection";
+import { Globe, MapPin, AlertTriangle, Settings, FlaskConical, Target, Layers, Coins, ShieldCheck, Leaf, Recycle, Factory, Network, Building2 } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Home"
@@ -121,10 +122,10 @@ export default function HomePage() {
         title="A Global Stockpile with Strategic Consequences"
       >
         <div className="grid-2">
-          <Card title="Globally">
+          <Card title="Globally" icon={Globe}>
             <List items={globalProblem} />
           </Card>
-          <Card title="India">
+          <Card title="India" icon={MapPin}>
             <List items={indiaProblem} />
           </Card>
         </div>
@@ -144,7 +145,7 @@ export default function HomePage() {
             />
           </figure>
         </div>
-        <Card title="Strategic Implications" className="mt-6">
+        <Card title="Strategic Implications" className="mt-6" icon={AlertTriangle}>
           <List items={implications} />
           <p>This is not a waste problem.</p>
           <p>It is a missed critical-minerals opportunity at national scale.</p>
@@ -162,10 +163,10 @@ export default function HomePage() {
           residue.
         </p>
         <div className="grid-2">
-          <Card title="Core Characteristics">
+          <Card title="Core Characteristics" icon={Settings}>
             <List items={coreCharacteristics} />
           </Card>
-          <Card title="Commercial Proof">
+          <Card title="Commercial Proof" icon={Target}>
             <List items={commercialProof} />
           </Card>
         </div>
@@ -200,30 +201,32 @@ export default function HomePage() {
         title="Strategic Materials Recovered from Waste"
       >
         <div className="grid-2">
-          <Card title="Critical & Strategic Materials">
+          <Card title="Critical & Strategic Materials" icon={Layers}>
             <List items={criticalOutputs} />
           </Card>
-          <Card title="Industrial By-Products">
+          <Card title="Industrial By-Products" icon={Factory}>
             <List items={byProducts} />
           </Card>
         </div>
         <div className="grid-2 mt-6">
-          <figure className="image-card">
+          <figure className="image-card" style={{ height: '250px' }}>
             <img
               src="/home/OUTPUTS.jpg"
               alt="Strategic Outputs"
               loading="lazy"
+              style={{ height: '100%', objectFit: 'cover' }}
             />
           </figure>
-          <figure className="image-card">
+          <figure className="image-card" style={{ height: '250px' }}>
             <img
               src="/home/OUTPUTS2.avif"
               alt="Critical Materials Output"
               loading="lazy"
+              style={{ height: '100%', objectFit: 'cover' }}
             />
           </figure>
         </div>
-        <Card title="Key Advantage" className="mt-6">
+        <Card title="Key Advantage" className="mt-6" icon={ShieldCheck}>
           <p>Red mud is already mined, crushed, and surface-stored.</p>
           <p>
             There is no drilling, no blasting, no beneficiation, and no tailings creation.
@@ -237,31 +240,30 @@ export default function HomePage() {
         title="Beyond Economics"
       >
         <div className="grid-3">
-          <Card title="Critical Minerals Security">
+          <Card
+            title="Critical Minerals Security"
+            icon={ShieldCheck}
+            imageSrc="/home/Critical Minerals Security.jpg"
+            imageAlt="Strategic mineral stockpile"
+          >
             <List items={strategicAlignment.security} />
           </Card>
-          <Card title="Environmental Resolution">
+          <Card
+            title="Environmental Resolution"
+            icon={Leaf}
+            imageSrc="/home/Environmental Resolution.png"
+            imageAlt="Environmental restoration"
+          >
             <List items={strategicAlignment.environment} />
           </Card>
-          <Card title="Industrial Circularity">
+          <Card
+            title="Industrial Circularity"
+            icon={Recycle}
+            imageSrc="/home/Industrial Circularity.webp"
+            imageAlt="Circular economy loop"
+          >
             <List items={strategicAlignment.circularity} />
           </Card>
-        </div>
-        <div className="grid-2 mt-6">
-          <figure className="image-card">
-            <img
-              src="/home/WHY THIS MATTERS.png"
-              alt="Why This Matters - Strategic Importance"
-              loading="lazy"
-            />
-          </figure>
-          <figure className="image-card">
-            <img
-              src="/home/WHY THIS MATTERS2.jpg"
-              alt="Why This Matters - National Impact"
-              loading="lazy"
-            />
-          </figure>
         </div>
       </Section>
 
@@ -271,13 +273,13 @@ export default function HomePage() {
         title="Built for Scale, Not Experimentation"
       >
         <div className="grid-3">
-          <Card title="Modular Plant Architecture">
+          <Card title="Modular Plant Architecture" icon={Building2}>
             <List items={deployment.architecture} />
           </Card>
-          <Card title="Integration Options">
+          <Card title="Integration Options" icon={Network}>
             <List items={deployment.integration} />
           </Card>
-          <Card title="Commercial Structures">
+          <Card title="Commercial Structures" icon={Coins}>
             <List items={deployment.commercial} />
           </Card>
         </div>

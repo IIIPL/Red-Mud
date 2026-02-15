@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Linkedin, Twitter, Mail, ArrowRight } from "lucide-react";
 
 export function Footer() {
     const currentYear = new Date().getFullYear();
@@ -17,6 +18,20 @@ export function Footer() {
                             <br />
                             Zero waste. Infinite value.
                         </p>
+                        <div className="footer-socials flex gap-4 mt-4">
+                            <a href="#" className="transition-colors" style={{ color: "#ea580c" }} aria-label="LinkedIn">
+                                <Linkedin className="w-5 h-5" strokeWidth={2} />
+                                <span className="sr-only">LinkedIn</span>
+                            </a>
+                            <a href="#" className="transition-colors" style={{ color: "#ea580c" }} aria-label="Twitter">
+                                <Twitter className="w-5 h-5" strokeWidth={2} />
+                                <span className="sr-only">Twitter</span>
+                            </a>
+                            <a href="mailto:info@redmud.com" className="transition-colors" style={{ color: "#ea580c" }} aria-label="Email">
+                                <Mail className="w-5 h-5" strokeWidth={2} />
+                                <span className="sr-only">Email</span>
+                            </a>
+                        </div>
                     </div>
 
                     {/* Column 2: Platform Links */}
@@ -57,8 +72,9 @@ export function Footer() {
                         <p>
                             Partner for industrial-scale remediation and critical mineral supply.
                         </p>
-                        <Link href="/contact" className="footer-cta-btn">
+                        <Link href="/contact" className="footer-cta-btn inline-flex items-center gap-2">
                             Start Conversation
+                            <ArrowRight className="w-4 h-4" />
                         </Link>
                     </div>
                 </div>

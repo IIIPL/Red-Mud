@@ -15,15 +15,15 @@
   --line: #e7e5e4;
   /* Soft divider lines */
 
-  /* Muted Iron Oxide Red - Primary Accent */
-  --accent: #b45309;
-  /* Muted terracotta/iron oxide red */
-  --accent-hover: #92400e;
-  /* Darker red for hover states */
-  --accent-soft: rgba(180, 83, 9, 0.08);
-  /* Subtle red tint */
-  --accent-border: rgba(180, 83, 9, 0.2);
-  /* Red for borders/dividers */
+  /* Red Mud Orange - Primary Accent */
+  --accent: #ea580c;
+  /* Vibrant Orange (Tailwind orange-600) */
+  --accent-hover: #c2410c;
+  /* Darker orange for hover states */
+  --accent-soft: rgba(234, 88, 12, 0.1);
+  /* Subtle orange tint */
+  --accent-border: rgba(234, 88, 12, 0.2);
+  /* Orange for borders/dividers */
 
   /* Supporting Colors */
   --steel-blue: #64748b;
@@ -640,7 +640,8 @@ button:disabled:hover {
   width: 100%;
 }
 
-.hero-media img {
+.hero-media img,
+.hero-media video {
   width: 100%;
   height: auto;
   object-fit: cover;
@@ -654,7 +655,20 @@ button:disabled:hover {
 /* Home page hero - show more of bottom, less of top */
 .home-page .hero-media img {
   object-position: center 70%;
+  animation: zoomOut 15s ease-out forwards;
 }
+
+@keyframes zoomOut {
+  from {
+    transform: scale(1.15);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+/* Remove video specific styles as we are reverting to image */
 
 .hero-copy {
   padding: clamp(2rem, 4vw, 3rem);
@@ -664,7 +678,7 @@ button:disabled:hover {
   margin: 0;
   font-size: clamp(2rem, 5vw, 3.5rem);
   line-height: 1.15;
-  color: var(--text);
+  color: var(--accent);
   letter-spacing: -0.02em;
 }
 
@@ -682,7 +696,7 @@ button:disabled:hover {
 
 .list-title {
   margin: 1.5rem 0 0.5rem !important;
-  color: var(--text);
+  color: var(--accent);
   font-weight: 600;
 }
 
@@ -713,7 +727,9 @@ button:disabled:hover {
 }
 
 @media (max-width: 760px) {
-  .hero-media img {
+
+  .hero-media img,
+  .hero-media video {
     aspect-ratio: 16 / 9;
     max-height: 400px;
   }
@@ -778,23 +794,20 @@ button:disabled:hover {
 
 @media (max-width: 760px) {
   .image-card img {
-    max-height: 250px;
+    max-height: none;
+    height: auto;
+    object-fit: contain;
+    aspect-ratio: auto;
   }
 
-  .image-card-large img {
-    max-height: 300px;
-  }
-
-  .image-card-tall img {
-    max-height: 350px;
-  }
-
-  .image-card-square img {
-    max-height: 280px;
-  }
-
+  .image-card-large img,
+  .image-card-tall img,
+  .image-card-square img,
   .image-card-full img {
-    max-height: 400px;
+    max-height: none;
+    height: auto;
+    object-fit: contain;
+    aspect-ratio: auto;
   }
 }
 
@@ -808,7 +821,7 @@ button:disabled:hover {
 .section-heading h2 {
   margin: 0;
   font-size: clamp(1.5rem, 3vw, 2.25rem);
-  color: var(--text);
+  color: var(--accent);
   letter-spacing: -0.01em;
 }
 
@@ -856,7 +869,7 @@ button:disabled:hover {
 
 .card h3 {
   margin: 0 0 0.75rem;
-  color: var(--text);
+  color: var(--accent);
   font-size: 1.1rem;
   font-weight: 600;
 }
@@ -868,6 +881,25 @@ button:disabled:hover {
 
 .card:active {
   border-color: var(--accent);
+}
+
+.card-image {
+  margin: -1.5rem -1.5rem 1.5rem -1.5rem;
+  border-radius: 12px 12px 0 0;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+}
+
+.card-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--transition-standard);
+}
+
+.card:hover .card-image img {
+  transform: scale(1.05);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -915,7 +947,7 @@ button:disabled:hover {
 .positioning-section h2 {
   margin: 0;
   font-size: clamp(1.5rem, 3vw, 2.5rem);
-  color: var(--text);
+  color: var(--accent);
   line-height: 1.2;
 }
 

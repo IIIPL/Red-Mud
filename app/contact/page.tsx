@@ -4,6 +4,7 @@ import { Section } from "@/components/ui/Section";
 import { Card } from "@/components/ui/Card";
 import { List } from "@/components/ui/List";
 import { PositioningSection } from "@/components/ui/PositioningSection";
+import { ClipboardList, Building2, Landmark, Briefcase, FileInput, ArrowRightCircle, AlertCircle, Scale, MessageSquare } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Contact"
@@ -55,7 +56,7 @@ export default function ContactPage({ searchParams }: ContactPageProps) {
             <p>Please complete all required fields and submit again.</p>
           </Card>
         ) : null}
-        <Card title="STEP 1 — IDENTIFY YOUR ORGANIZATION TYPE">
+        <Card title="STEP 1 — IDENTIFY YOUR ORGANIZATION TYPE" icon={ClipboardList}>
           <p>
             Please select the category that best describes your organization.
             This allows us to route your inquiry to the appropriate technical and commercial team.
@@ -63,7 +64,7 @@ export default function ContactPage({ searchParams }: ContactPageProps) {
         </Card>
 
         <div className="grid-3 mt-6">
-          <Card title="A. Alumina Producers & Refinery Operators">
+          <Card title="A. Alumina Producers & Refinery Operators" icon={Building2}>
             <p className="font-semibold text-sm mb-2">Primary focus: remediation, compliance, and asset-adjacent deployment</p>
             <p className="font-semibold text-sm mb-2">Typical objectives</p>
             <List
@@ -84,7 +85,7 @@ export default function ContactPage({ searchParams }: ContactPageProps) {
               ]}
             />
           </Card>
-          <Card title="B. Government & Public-Sector Institutions">
+          <Card title="B. Government & Public-Sector Institutions" icon={Landmark}>
             <p className="font-semibold text-sm mb-2">Primary focus: policy execution, remediation mandates, and national capability</p>
             <p className="font-semibold text-sm mb-2">Typical objectives</p>
             <List
@@ -105,7 +106,7 @@ export default function ContactPage({ searchParams }: ContactPageProps) {
               ]}
             />
           </Card>
-          <Card title="C. Strategic & Institutional Investors">
+          <Card title="C. Strategic & Institutional Investors" icon={Briefcase}>
             <p className="font-semibold text-sm mb-2">Primary focus: infrastructure, critical materials, and long-duration assets</p>
             <p className="font-semibold text-sm mb-2">Typical objectives</p>
             <List
@@ -207,13 +208,13 @@ export default function ContactPage({ searchParams }: ContactPageProps) {
         title="A Structured Engagement Pathway"
       >
         <div className="grid-2">
-          <Card title="1. Initial Review (7–10 days)">
+          <Card title="1. Initial Review (7–10 days)" icon={ClipboardList}>
             <p>
               Submissions are reviewed by technical and commercial leads to confirm relevance,
               feasibility, and alignment.
             </p>
           </Card>
-          <Card title="2. Confidential Technical Briefing">
+          <Card title="2. Confidential Technical Briefing" icon={MessageSquare}>
             <p>Qualified parties are invited to a structured technical session covering:</p>
             <List
               items={[
@@ -226,7 +227,7 @@ export default function ContactPage({ searchParams }: ContactPageProps) {
           </Card>
         </div>
         <div className="grid-2 mt-6">
-          <Card title="3. Site & Data Assessment">
+          <Card title="3. Site & Data Assessment" icon={ClipboardList}>
             <p>Where appropriate:</p>
             <List
               items={[
@@ -236,7 +237,7 @@ export default function ContactPage({ searchParams }: ContactPageProps) {
               ]}
             />
           </Card>
-          <Card title="4. Commercial Structuring Discussion">
+          <Card title="4. Commercial Structuring Discussion" icon={Scale}>
             <p>Definition of:</p>
             <List
               items={[
@@ -247,7 +248,7 @@ export default function ContactPage({ searchParams }: ContactPageProps) {
             />
           </Card>
         </div>
-        <Card title="5. Formal Engagement" className="mt-6">
+        <Card title="5. Formal Engagement" className="mt-6" icon={ArrowRightCircle}>
           <p>
             Execution of NDAs, term sheets, and project-specific workplans leading toward
             deployment or investment.
@@ -267,7 +268,7 @@ export default function ContactPage({ searchParams }: ContactPageProps) {
         kicker="EXPECTATION SETTING"
         title="To ensure productive engagement:"
       >
-        <Card>
+        <Card icon={AlertCircle}>
           <List
             items={[
               "No unsolicited financial models or technical documentation",
@@ -283,7 +284,7 @@ export default function ContactPage({ searchParams }: ContactPageProps) {
         kicker="CONFIDENTIALITY & GOVERNANCE"
         title="All qualified engagements proceed under:"
       >
-        <Card>
+        <Card icon={Scale}>
           <List
             items={[
               "Mutual non-disclosure agreements",
@@ -300,7 +301,7 @@ export default function ContactPage({ searchParams }: ContactPageProps) {
         kicker="CLARIFICATION"
         title="Purpose of Enquiry"
       >
-        <Card>
+        <Card icon={MessageSquare}>
           <p className="font-semibold mb-2">This is not a generic contact form.</p>
           <p>
             It is the first step in deploying industrial-scale remediation and critical-minerals
