@@ -4,6 +4,7 @@ import { Section } from "@/components/ui/Section";
 import { Card } from "@/components/ui/Card";
 import { List } from "@/components/ui/List";
 import { PositioningSection } from "@/components/ui/PositioningSection";
+import { Info, Settings, ShieldCheck, Zap, Thermometer, Filter, Layers, Recycle, Factory, Network, CheckCircle2, Leaf, MapPin } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Technology"
@@ -73,7 +74,7 @@ export default function TechnologyPage() {
         title="Objective:"
       >
         <p>Prepare highly alkaline, mineral-complex red mud for controlled, selective extraction.</p>
-        <Card title="What Happens">
+        <Card title="What Happens" icon={Settings}>
           <List
             items={[
               "Red mud is mechanically homogenized and conditioned",
@@ -82,7 +83,7 @@ export default function TechnologyPage() {
             ]}
           />
         </Card>
-        <Card title="Why This Matters" className="mt-6">
+        <Card title="Why This Matters" className="mt-6" icon={Info}>
           <p>Red mud is not a uniform material. Its composition varies by:</p>
           <List
             items={[
@@ -97,7 +98,7 @@ export default function TechnologyPage() {
             residues without fundamental redesign.
           </p>
         </Card>
-        <Card title="Key Characteristics" className="mt-6">
+        <Card title="Key Characteristics" className="mt-6" icon={CheckCircle2}>
           <List
             items={[
               "No thermal treatment",
@@ -109,7 +110,7 @@ export default function TechnologyPage() {
         </Card>
         <figure className="image-card image-card-tall mt-6">
           <img
-            src="/TECHNOLOGY/STAGE 1.avif"
+            src="/TECHNOLOGY/FEEDSTOCK CONDITIONING & MATRIX STABILIZATION.png"
             alt="Stage 1 - Feedstock Conditioning Process"
             loading="lazy"
           />
@@ -123,7 +124,7 @@ export default function TechnologyPage() {
       >
         <p>Mobilize critical and strategic elements without dissolving the full bulk matrix.</p>
         <div className="grid-2">
-          <Card title="What Happens">
+          <Card title="What Happens" icon={Filter}>
             <List
               items={[
                 "Proprietary leaching chemistry selectively dissolves target metals",
@@ -132,7 +133,7 @@ export default function TechnologyPage() {
               ]}
             />
           </Card>
-          <Card title="Why This Matters">
+          <Card title="Why This Matters" icon={Info}>
             <p>Conventional approaches attempt bulk dissolution, driving:</p>
             <List
               items={[
@@ -151,7 +152,7 @@ export default function TechnologyPage() {
             />
           </Card>
         </div>
-        <Card title="Operating Profile" className="mt-6">
+        <Card title="Operating Profile" className="mt-6" icon={Thermometer}>
           <List
             items={[
               "<100 °C",
@@ -180,7 +181,7 @@ export default function TechnologyPage() {
           direct industrial use.
         </p>
         <div className="grid-2">
-          <Card title="What Happens">
+          <Card title="What Happens" icon={Layers}>
             <List
               items={[
                 "Dissolved metals are separated via staged precipitation, ion-exchange, and controlled crystallization",
@@ -189,7 +190,7 @@ export default function TechnologyPage() {
               ]}
             />
           </Card>
-          <Card title="Recovered Outputs Include">
+          <Card title="Recovered Outputs Include" icon={Factory}>
             <List
               items={[
                 "Scandium compounds",
@@ -200,7 +201,7 @@ export default function TechnologyPage() {
             />
           </Card>
         </div>
-        <Card title="Why This Matters" className="mt-6">
+        <Card title="Why This Matters" className="mt-6" icon={ShieldCheck}>
           <p>
             Producing separate, specification-grade outputs avoids the need for third-party
             cracking or offshore refining—critical for supply-chain security and value capture.
@@ -208,7 +209,7 @@ export default function TechnologyPage() {
         </Card>
         <figure className="image-card image-card-full mt-6">
           <img
-            src="/TECHNOLOGY/Strategic Materials Recovered from Red Mud.webp"
+            src="/TECHNOLOGY/Fractionated Separation & Metal Recovery.jpg"
             alt="Strategic Materials Recovered from Red Mud"
             loading="lazy"
           />
@@ -221,7 +222,7 @@ export default function TechnologyPage() {
         title="Objective:"
       >
         <p>Eliminate tailings and convert all remaining solids into stable, usable materials.</p>
-        <Card title="What Happens">
+        <Card title="What Happens" icon={Recycle}>
           <List
             items={[
               "Remaining solids are neutralized and mineralogically stabilized",
@@ -230,7 +231,7 @@ export default function TechnologyPage() {
             ]}
           />
         </Card>
-        <Card title="Result" className="mt-6">
+        <Card title="Result" className="mt-6" icon={CheckCircle2}>
           <List
             items={[
               "No new waste stream",
@@ -241,22 +242,13 @@ export default function TechnologyPage() {
           <p>This is not waste minimization.</p>
           <p>It is full material conversion.</p>
         </Card>
-        <div className="grid-2 mt-6">
-          <figure className="image-card image-card-tall">
-            <img
-              src="/TECHNOLOGY/WATER RECOVERY & CLOSED-LOOP OPERATION.png"
-              alt="Water Recovery and Closed-Loop Operation"
-              loading="lazy"
-            />
-          </figure>
-          <figure className="image-card image-card-tall">
-            <img
-              src="/TECHNOLOGY/Reverse Osmosis with Closed-Circuit Desalination for High Recovery in Commercial RO Plants.webp"
-              alt="Reverse Osmosis Closed-Circuit Desalination"
-              loading="lazy"
-            />
-          </figure>
-        </div>
+        <figure className="image-card image-card-tall mt-6">
+          <img
+            src="/TECHNOLOGY/WATER RECOVERY & CLOSED-LOOP OPERATION.png"
+            alt="Water Recovery and Closed-Loop Operation"
+            loading="lazy"
+          />
+        </figure>
       </Section>
 
       <Section
@@ -265,7 +257,7 @@ export default function TechnologyPage() {
         title="Engineered for Deployment, Not Experimentation"
       >
         <div className="grid-3">
-          <Card title="Modular Architecture">
+          <Card title="Modular Architecture" icon={Factory}>
             <List
               items={[
                 "Standardized processing blocks",
@@ -274,7 +266,7 @@ export default function TechnologyPage() {
               ]}
             />
           </Card>
-          <Card title="Environmental Profile">
+          <Card title="Environmental Profile" icon={Leaf}>
             <List
               items={[
                 "Low-temperature operation",
@@ -285,7 +277,7 @@ export default function TechnologyPage() {
               ]}
             />
           </Card>
-          <Card title="Operational Advantages">
+          <Card title="Operational Advantages" icon={Zap}>
             <List
               items={[
                 "Faster permitting versus mining or smelting",
@@ -298,7 +290,7 @@ export default function TechnologyPage() {
         </div>
         <figure className="image-card image-card-large mt-6">
           <img
-            src="/TECHNOLOGY/Modular-construction-on-chemical-process-system.jpg"
+            src="/TECHNOLOGY/ZERO-WASTE MODULAR PLANT DESIGN.jpg"
             alt="Modular Construction on Chemical Process System"
             loading="lazy"
           />
@@ -311,7 +303,7 @@ export default function TechnologyPage() {
         title="Designed to Sit Beside Refineries — Not Disrupt Them"
       >
         <div className="grid-2">
-          <Card title="Integration Model">
+          <Card title="Integration Model" icon={Network}>
             <ul className="home-list">
               <li>Installed adjacent to existing residue handling or storage areas</li>
               <li>
@@ -324,7 +316,7 @@ export default function TechnologyPage() {
               </li>
             </ul>
           </Card>
-          <Card title="What the Refinery Does Not Need to Change">
+          <Card title="What the Refinery Does Not Need to Change" icon={CheckCircle2}>
             <List
               items={[
                 "Bayer digestion process",
@@ -336,7 +328,7 @@ export default function TechnologyPage() {
           </Card>
         </div>
         <div className="grid-2 mt-6">
-          <Card title="What the Refinery Gains">
+          <Card title="What the Refinery Gains" icon={Zap}>
             <List
               items={[
                 "Permanent reduction of red-mud inventory",
@@ -346,7 +338,7 @@ export default function TechnologyPage() {
               ]}
             />
           </Card>
-          <Card title="Typical Integration Footprint">
+          <Card title="Typical Integration Footprint" icon={MapPin}>
             <List
               items={[
                 "Modular, brownfield-compatible",
@@ -363,7 +355,7 @@ export default function TechnologyPage() {
         kicker="WHY THIS TECHNOLOGY SCALES"
         title="Key Differentiators"
       >
-        <Card>
+        <Card icon={ShieldCheck}>
           <List
             items={[
               "Granted patent protection covering process architecture",

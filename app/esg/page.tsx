@@ -4,6 +4,7 @@ import { Section } from "@/components/ui/Section";
 import { Card } from "@/components/ui/Card";
 import { List } from "@/components/ui/List";
 import { PositioningSection } from "@/components/ui/PositioningSection";
+import { Globe, LandPlot, Droplet, Wind, Recycle, Users, BarChart3, Sprout } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "ESG"
@@ -37,7 +38,7 @@ export default function EsgPage() {
         kicker="WASTE-TO-VALUE"
         title="The Core ESG Principle"
       >
-        <Card>
+        <Card icon={Globe}>
           <p>
             Globally, more than 4 billion tonnes of red mud sit in engineered ponds, with
             ~150 million tonnes added annually. Each tonne represents:
@@ -68,7 +69,7 @@ export default function EsgPage() {
         kicker="ENVIRONMENTAL IMPACT PILLARS"
         title="1. LAND RECLAMATION & RISK ELIMINATION"
       >
-        <Card title="Impact Mechanism">
+        <Card title="Impact Mechanism" icon={LandPlot}>
           <List
             items={[
               "Each tonne processed permanently reduces stored residue volume",
@@ -101,7 +102,7 @@ export default function EsgPage() {
           />
         </figure>
 
-        <Card title="2. WATER RECOVERY & CLOSED-LOOP OPERATION" className="mt-6">
+        <Card title="2. WATER RECOVERY & CLOSED-LOOP OPERATION" className="mt-6" icon={Droplet}>
           <p>Red mud contains significant entrained process water and alkalinity.</p>
           <p className="font-semibold mt-4 mb-2">Our Approach</p>
           <List
@@ -136,7 +137,7 @@ export default function EsgPage() {
           />
         </figure>
 
-        <Card title="3. CARBON & ENERGY FOOTPRINT AVOIDANCE" className="mt-6">
+        <Card title="3. CARBON & ENERGY FOOTPRINT AVOIDANCE" className="mt-6" icon={Wind}>
           <p className="font-semibold mb-2">Process Advantage</p>
           <List
             items={[
@@ -179,7 +180,7 @@ export default function EsgPage() {
         kicker="CIRCULAR ECONOMY IN PRACTICE"
         title="Not in Theory"
       >
-        <Card>
+        <Card icon={Recycle}>
           <p>
             Unlike partial-use pathways (cement blending, bricks, road fill), this platform:
           </p>
@@ -223,7 +224,7 @@ export default function EsgPage() {
         kicker="SOCIAL & GOVERNANCE DIMENSIONS"
         title="Community & Regulatory Confidence"
       >
-        <Card>
+        <Card icon={Users}>
           <List
             items={[
               "Reduced long-term environmental risk near communities",
@@ -264,7 +265,7 @@ export default function EsgPage() {
         kicker="ESG PERFORMANCE"
         title="Sample KPI Framework"
       >
-        <Card>
+        <Card icon={BarChart3}>
           <div className="kpi-table-wrap" role="region" aria-label="ESG KPI framework table" tabIndex={0}>
             <table className="kpi-table">
               <thead>

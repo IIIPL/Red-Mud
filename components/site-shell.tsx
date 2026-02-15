@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Footer } from "@/components/ui/Footer";
 import { useState } from "react";
 import type { ReactNode } from "react";
+import { Menu, X } from "lucide-react";
 
 const navigation = [
   { href: "/", label: "Home" },
@@ -41,11 +42,11 @@ export function SiteShell({ children }: SiteShellProps) {
               aria-controls="primary-navigation"
               onClick={() => setMobileNavOpen((prev) => !prev)}
             >
-              <div className="menu-toggle-icon">
-                <span className="menu-toggle-bar" />
-                <span className="menu-toggle-bar" />
-                <span className="menu-toggle-bar" />
-              </div>
+              {mobileNavOpen ? (
+                <X className="h-6 w-6 text-[var(--accent)]" />
+              ) : (
+                <Menu className="h-6 w-6 text-[var(--text)]" />
+              )}
               <span className="menu-toggle-label">Menu</span>
             </button>
 

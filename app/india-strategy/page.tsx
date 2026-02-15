@@ -4,6 +4,7 @@ import { Section } from "@/components/ui/Section";
 import { Card } from "@/components/ui/Card";
 import { List } from "@/components/ui/List";
 import { PositioningSection } from "@/components/ui/PositioningSection";
+import { AlertTriangle, Map, Layers, Lightbulb, Target, Gem, ScrollText, ShieldCheck, TrendingUp, Leaf, Settings, Landmark, Scale, Factory } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "India Strategy"
@@ -37,7 +38,7 @@ export default function IndiaStrategyPage() {
         kicker="INDIA'S RED MUD REALITY"
         title="Scale, Concentration, and Risk"
       >
-        <Card>
+        <Card icon={AlertTriangle}>
           <List
             items={[
               "~9 million tonnes/year of red mud generated nationally",
@@ -47,7 +48,7 @@ export default function IndiaStrategyPage() {
           />
         </Card>
         <div className="grid-2 mt-6">
-          <Card title="Geographic Concentration">
+          <Card title="Geographic Concentration" icon={Map}>
             <ul className="home-list">
               <li>Odisha contributes ~75–80% of India’s annual red-mud output</li>
               <li>
@@ -62,7 +63,7 @@ export default function IndiaStrategyPage() {
               </li>
             </ul>
           </Card>
-          <Card title="Legacy Stockpiles">
+          <Card title="Legacy Stockpiles" icon={Layers}>
             <List
               items={[
                 "Tens of millions of tonnes already stored",
@@ -72,15 +73,15 @@ export default function IndiaStrategyPage() {
             />
           </Card>
         </div>
-        <Card title="Key Insight:" className="mt-6">
+        <Card title="Key Insight:" className="mt-6" icon={Lightbulb}>
           <p>India’s red-mud challenge is not future-tense.</p>
           <p>It is already accumulated, geographically concentrated, and policy-relevant today.</p>
         </Card>
         <div className="grid-2 mt-6">
-          <Card title="Priority States">
+          <Card title="Priority States" icon={Target}>
             <List items={["Odisha", "Jharkhand", "Uttar Pradesh"]} />
           </Card>
-          <Card title="Major Clusters">
+          <Card title="Major Clusters" icon={Factory}>
             <List
               items={[
                 "NALCO Damanjodi",
@@ -99,7 +100,7 @@ export default function IndiaStrategyPage() {
         kicker="STRATEGIC MINERAL POTENTIAL"
         title="Hiding in Plain Sight"
       >
-        <Card>
+        <Card icon={Gem}>
           <List
             items={[
               "Iron oxides: ~35–45%",
@@ -135,7 +136,7 @@ export default function IndiaStrategyPage() {
         kicker="POLICY ALIGNMENT"
         title="Built for India's National Missions"
       >
-        <Card>
+        <Card icon={ScrollText}>
           <p>
             India has formally recognized rare earths, scandium, and titanium as strategic
             materials essential for:
@@ -153,7 +154,7 @@ export default function IndiaStrategyPage() {
             geopolitically concentrated supply chains.
           </p>
         </Card>
-        <Card title="2. Environmental Remediation & CPCB Objectives" className="mt-6">
+        <Card title="2. Environmental Remediation & CPCB Objectives" className="mt-6" icon={ShieldCheck}>
           <p>The Central Pollution Control Board (CPCB) has highlighted:</p>
           <List
             items={[
@@ -171,7 +172,7 @@ export default function IndiaStrategyPage() {
             ]}
           />
         </Card>
-        <Card title="3. Circular Economy & Atmanirbhar Bharat" className="mt-6">
+        <Card title="3. Circular Economy & Atmanirbhar Bharat" className="mt-6" icon={TrendingUp}>
           <p>India’s industrial policy emphasizes:</p>
           <List
             items={[
@@ -189,7 +190,7 @@ export default function IndiaStrategyPage() {
             ]}
           />
         </Card>
-        <Card title="4. ESG, Land Use & Social License" className="mt-6">
+        <Card title="4. ESG, Land Use & Social License" className="mt-6" icon={Leaf}>
           <List
             items={[
               "Red mud ponds occupy scarce industrial land",
@@ -226,7 +227,7 @@ export default function IndiaStrategyPage() {
         kicker="DEPLOYMENT STRATEGY FOR INDIA"
         title="Target Integration Model"
       >
-        <Card>
+        <Card icon={Settings}>
           <ul className="home-list">
             <li>On-site or adjacent to existing alumina refineries</li>
             <li>
@@ -240,7 +241,7 @@ export default function IndiaStrategyPage() {
           </ul>
         </Card>
         <div className="grid-2 mt-6">
-          <Card title="Modular Scale-Up">
+          <Card title="Modular Scale-Up" icon={Scale}>
             <List
               items={[
                 "Initial modules aligned to 350,000 t/year processing blocks",
@@ -248,7 +249,7 @@ export default function IndiaStrategyPage() {
               ]}
             />
           </Card>
-          <Card title="Priority States">
+          <Card title="Priority States" icon={Target}>
             <List items={["Odisha", "Jharkhand", "Uttar Pradesh"]} />
           </Card>
         </div>
@@ -266,7 +267,7 @@ export default function IndiaStrategyPage() {
         kicker="ROLE OF GOVERNMENT & INSTITUTIONS"
         title="This platform is designed to work with public policy."
       >
-        <Card title="Potential Engagement Pathways">
+        <Card title="Potential Engagement Pathways" icon={Landmark}>
           <List
             items={[
               "Public-Private Partnerships with PSUs",

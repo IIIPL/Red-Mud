@@ -4,6 +4,7 @@ import { Section } from "@/components/ui/Section";
 import { Card } from "@/components/ui/Card";
 import { List } from "@/components/ui/List";
 import { PositioningSection } from "@/components/ui/PositioningSection";
+import { Handshake, FileBadge, Factory, TrendingUp, ShieldCheck, Users, ArrowRightCircle, ClipboardCheck, FileText, Settings, Activity, Lightbulb } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Partnerships"
@@ -37,7 +38,7 @@ export default function PartnershipsPage() {
         kicker="PARTNERSHIP PHILOSOPHY"
         title="Aligning Environmental Remediation With Industrial Economics"
       >
-        <Card>
+        <Card icon={Lightbulb}>
           <p>
             Red mud is not a speculative feedstock—it is a continuously generated, on-site
             industrial liability. Our partnership models convert this liability into a monetizable
@@ -67,7 +68,7 @@ export default function PartnershipsPage() {
         kicker="CORE BUSINESS MODELS"
         title="1. JOINT VENTURE (JV) WITH ALUMINA PRODUCERS"
       >
-        <Card>
+        <Card icon={Handshake}>
           <p className="font-semibold mb-2">Shared Ownership. Shared Upside. Immediate Remediation.</p>
           <p>
             Under the JV model, a special-purpose vehicle is jointly owned with the alumina
@@ -83,7 +84,7 @@ export default function PartnershipsPage() {
           />
         </Card>
         <div className="grid-2 mt-6">
-          <Card title="Value for Alumina Producers">
+          <Card title="Value for Alumina Producers" icon={TrendingUp}>
             <List
               items={[
                 "Elimination of long-term residue storage costs",
@@ -93,7 +94,7 @@ export default function PartnershipsPage() {
               ]}
             />
           </Card>
-          <Card title="Value for Investors">
+          <Card title="Value for Investors" icon={ShieldCheck}>
             <List
               items={[
                 "Direct exposure to cash-generating processing assets",
@@ -110,7 +111,7 @@ export default function PartnershipsPage() {
         </Card>
 
         <h2 className="text-xl font-bold mt-12 mb-4">2. TECHNOLOGY LICENSING</h2>
-        <Card>
+        <Card icon={FileBadge}>
           <p className="font-semibold mb-2">Low Capital. Rapid Replication. Asset-Light Scaling.</p>
           <p>
             In licensing structures, partners deploy the patented extraction process under a
@@ -127,7 +128,7 @@ export default function PartnershipsPage() {
           />
         </Card>
         <div className="grid-2 mt-6">
-          <Card title="Value for Alumina Producers">
+          <Card title="Value for Alumina Producers" icon={TrendingUp}>
             <List
               items={[
                 "Minimal balance-sheet exposure",
@@ -136,7 +137,7 @@ export default function PartnershipsPage() {
               ]}
             />
           </Card>
-          <Card title="Value for Technology Owner">
+          <Card title="Value for Technology Owner" icon={ShieldCheck}>
             <List
               items={[
                 "Scalable global footprint",
@@ -160,7 +161,7 @@ export default function PartnershipsPage() {
         </figure>
 
         <h2 className="text-xl font-bold mt-12 mb-4">3. BUILD-OWN-OPERATE (BOO)</h2>
-        <Card>
+        <Card icon={Factory}>
           <p className="font-semibold mb-2">Turnkey Remediation With Zero Capital Burden for the Producer</p>
           <p>
             In a BOO configuration, the processing plant is designed, financed, built, and operated
@@ -177,7 +178,7 @@ export default function PartnershipsPage() {
           />
         </Card>
         <div className="grid-2 mt-6">
-          <Card title="Value for Alumina Producers">
+          <Card title="Value for Alumina Producers" icon={TrendingUp}>
             <List
               items={[
                 "No capital expenditure",
@@ -187,7 +188,7 @@ export default function PartnershipsPage() {
               ]}
             />
           </Card>
-          <Card title="Value for Investors">
+          <Card title="Value for Investors" icon={ShieldCheck}>
             <List
               items={[
                 "Infrastructure-style asset with contracted feedstock",
@@ -204,7 +205,7 @@ export default function PartnershipsPage() {
         </Card>
         <figure className="image-card image-card-large mt-6">
           <img
-            src="/partnership/Build-Own-Operate (BOO).jpg"
+            src="/partnership/BUILD-OWN-OPERATE.jpg"
             alt="Build-Own-Operate Model"
             loading="lazy"
           />
@@ -217,7 +218,7 @@ export default function PartnershipsPage() {
         title="Partner with an Alumina Producer"
       >
         <div className="grid-2">
-          <Card title="Step 1: Site & Stockpile Assessment">
+          <Card title="Step 1: Site & Stockpile Assessment" icon={ClipboardCheck}>
             <List
               items={[
                 "Chemical and mineralogical characterization",
@@ -226,7 +227,7 @@ export default function PartnershipsPage() {
               ]}
             />
           </Card>
-          <Card title="Step 2: Commercial Structuring">
+          <Card title="Step 2: Commercial Structuring" icon={FileText}>
             <List
               items={[
                 "JV, Licensing, or BOO selection",
@@ -237,7 +238,7 @@ export default function PartnershipsPage() {
           </Card>
         </div>
         <div className="grid-2 mt-6">
-          <Card title="Step 3: Modular Plant Deployment">
+          <Card title="Step 3: Modular Plant Deployment" icon={Settings}>
             <List
               items={[
                 "Plug-and-play installation",
@@ -246,7 +247,7 @@ export default function PartnershipsPage() {
               ]}
             />
           </Card>
-          <Card title="Step 4: Long-Term Operations & Expansion">
+          <Card title="Step 4: Long-Term Operations & Expansion" icon={Activity}>
             <List
               items={[
                 "Continuous processing of new residue",
@@ -287,8 +288,8 @@ export default function PartnershipsPage() {
         </div>
         <figure className="image-card image-card-large mt-6">
           <img
-            src="/partnership/Deployment Flow.jpeg"
-            alt="Partnership Deployment Flow"
+            src="/partnership/Partner with an Alumina Producer.png"
+            alt="Partner with an Alumina Producer"
             loading="lazy"
           />
         </figure>
@@ -300,7 +301,7 @@ export default function PartnershipsPage() {
         title="For Alumina Producers"
       >
         <div className="grid-2">
-          <Card title="For Alumina Producers">
+          <Card title="For Alumina Producers" icon={Factory}>
             <List
               items={[
                 "Permanent reduction of red mud liabilities",
@@ -310,7 +311,7 @@ export default function PartnershipsPage() {
               ]}
             />
           </Card>
-          <Card title="For Investors & Strategic Capital">
+          <Card title="For Investors & Strategic Capital" icon={TrendingUp}>
             <List
               items={[
                 "Access to critical minerals without geological mining risk",
@@ -335,7 +336,7 @@ export default function PartnershipsPage() {
         kicker="WHY PARTNERSHIPS MATTER"
         title="No Single Stakeholder Solves This Alone"
       >
-        <Card>
+        <Card icon={Users}>
           <p>
             Red mud remediation sits at the intersection of mining, materials science,
             infrastructure, and public policy. Scalable deployment requires collaboration—not
@@ -357,7 +358,7 @@ export default function PartnershipsPage() {
         kicker="NEXT STEPS"
         title="From Discussion to Deployment"
       >
-        <Card>
+        <Card icon={ArrowRightCircle}>
           <List
             items={[
               "Confidential technical briefing",
