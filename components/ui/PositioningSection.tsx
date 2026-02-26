@@ -3,6 +3,7 @@ import Link from "next/link";
 type NavigationButton = {
     label: string;
     href: string;
+    variant?: "primary" | "ghost-white";
 };
 
 type PositioningSectionProps = {
@@ -20,18 +21,24 @@ export function PositioningSection({
 }: PositioningSectionProps) {
     return (
         <section className="positioning-section reveal" aria-labelledby={id}>
-            <div className="positioning-content">
-                <h2 id={id}>{title}</h2>
-                <p>{description}</p>
-                {buttons.length > 0 && (
-                    <div className="positioning-buttons">
-                        {buttons.map((button, index) => (
-                            <Link key={index} href={button.href} className="btn btn-primary">
-                                {button.label}
-                            </Link>
-                        ))}
-                    </div>
-                )}
+            <div className="container">
+                <div className="positioning-content">
+                    <h2 id={id}>{title}</h2>
+                    <p>{description}</p>
+                    {buttons.length > 0 && (
+                        <div className="positioning-buttons">
+                            {buttons.map((button, index) => (
+                                <Link
+                                    key={index}
+                                    href={button.href}
+                                    className={`btn ${index === 0 ? "btn-primary" : "btn-ghost-white"}`}
+                                >
+                                    {button.label}
+                                </Link>
+                            ))}
+                        </div>
+                    )}
+                </div>
             </div>
         </section>
     );

@@ -20,9 +20,26 @@ export function Card({ title, children, className = "", icon: Icon, imageSrc, im
         </div>
       )}
       {(title || Icon) && (
-        <div className="card-header mb-4 flex flex-col items-start gap-4">
-          {Icon && <Icon className="h-8 w-8" style={{ color: "#ea580c" }} strokeWidth={2} />}
-          {title && <h3>{title}</h3>}
+        <div className="card-header pb-4 mb-4" style={{ borderBottom: "1px solid var(--line)" }}>
+          {Icon && (
+            <span className="card-icon-badge" style={{
+              display: "inline-flex",
+              alignItems: "center",
+              justifyContent: "center",
+              width: 40,
+              height: 40,
+              borderRadius: "10px",
+              background: "var(--accent-soft)",
+              marginBottom: "0.85rem",
+            }}>
+              <Icon size={20} style={{ color: "var(--accent)" }} strokeWidth={2} />
+            </span>
+          )}
+          {title && (
+            <h3 style={{ margin: 0, fontSize: "1.05rem", fontWeight: 700, color: "var(--text)", letterSpacing: "-0.01em" }}>
+              {title}
+            </h3>
+          )}
         </div>
       )}
       {children}

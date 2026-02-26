@@ -95,6 +95,8 @@ export default function HomePage() {
       <VantaHero
         title="From Bauxite Residue to Critical Minerals"
         lead="A patented, commercially proven platform for extracting rare earths and strategic metals from red mud—at industrial scale, with no mining."
+        primaryCta={{ label: "Explore Technology", href: "/technology" }}
+        secondaryCta={{ label: "Discuss Partnership", href: "/contact" }}
       >
         <p>
           Red mud—bauxite residue from alumina refining—is one of the largest unmanaged
@@ -115,15 +117,28 @@ export default function HomePage() {
         </div>
       </VantaHero>
 
-
-      {/* Primary CTAs */}
-      <div className="positioning-buttons" style={{ marginTop: '2rem' }}>
-        <a href="/technology" className="btn btn-primary">
-          Explore Technology
-        </a>
-        <a href="/contact" className="btn btn-primary">
-          Discuss Partnership Opportunities
-        </a>
+      {/* Stats Band */}
+      <div className="stats-band">
+        <div className="container">
+          <div className="stats-grid">
+            <div className="stat-item">
+              <span className="stat-item-value">4B+</span>
+              <span className="stat-item-label">Tonnes accumulated worldwide</span>
+            </div>
+            <div className="stat-item">
+              <span className="stat-item-value">150M</span>
+              <span className="stat-item-label">Tonnes generated annually</span>
+            </div>
+            <div className="stat-item">
+              <span className="stat-item-value">25+</span>
+              <span className="stat-item-label">Elements extractable per feedstock</span>
+            </div>
+            <div className="stat-item">
+              <span className="stat-item-value">0</span>
+              <span className="stat-item-label">New mining required</span>
+            </div>
+          </div>
+        </div>
       </div>
 
       <Section

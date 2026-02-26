@@ -10,6 +10,7 @@ interface SectionProps {
     className?: string;
     markedAs?: "section" | "div";
     icon?: LucideIcon;
+    dark?: boolean;
 }
 
 export function Section({
@@ -20,23 +21,49 @@ export function Section({
     className = "",
     markedAs = "section",
     icon: Icon,
+    dark = false,
 }: SectionProps) {
     const Tag = markedAs;
 
     return (
-        <Tag className={`content-section reveal ${className}`} aria-labelledby={id}>
-            <ScrollReveal animation="slideUp">
-                {(kicker || title || Icon) && (
-                    <div className="section-heading mb-6">
-                        <div className="flex items-center gap-3 mb-2">
-                            {Icon && <Icon className="h-8 w-8" style={{ color: "#ea580c" }} strokeWidth={2} />}
-                            {kicker && <p className="kicker mb-0">{kicker}</p>}
+        <Tag
+            className={`content-section reveal ${dark ? "section-dark" : ""} ${className}`}
+            aria-labelledby={id}
+            style={dark ? { background: "#0d1117", color: "#fff" } : undefined}
+        >
+            <div className="container">
+                <ScrollReveal animation="slideUp">
+                    {(kicker || title || Icon) && (
+                        <div className="section-heading">
+                            {(kicker || Icon) && (
+                                <div className="section-kicker-row">
+                                    {Icon && (
+                                        <span className="section-icon-badge">
+                                            <Icon strokeWidth={2} size={16} />
+                                        </span>
+                                    )}
+                                    {kicker && (
+                                        <p className="kicker" style={{
+                                            display: "inline-flex",
+                                            alignItems: "center",
+                                            gap: "0.6rem",
+                                            margin: 0,
+                                        }}>
+                                            {kicker}
+                                        </p>
+                                    )}
+                                </div>
+                            )}
+                            {title && (
+                                <h2 id={id} style={{ marginTop: "0.6rem" }}>
+                                    {title}
+                                </h2>
+                            )}
                         </div>
-                        {title && <h2 id={id}>{title}</h2>}
-                    </div>
-                )}
-                {children}
-            </ScrollReveal>
+                    )}
+                    {children}
+                </ScrollReveal>
+            </div>
         </Tag>
     );
 }
